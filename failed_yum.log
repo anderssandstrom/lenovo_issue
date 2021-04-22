@@ -1,0 +1,39 @@
+
+[iocuser@localhost ~]$ sudo yum install  kernel-rt-3.10.0-1160.6.1.rt56.1139.el7
+Loaded plugins: fastestmirror, langpacks, versionlock
+Loading mirror speeds from cached hostfile
+ * base: mirror.nsc.liu.se
+ * centos-kernel: mirrors.dotsrc.org
+ * centos-kernel-experimental: mirrors.dotsrc.org
+ * epel: mirror.nsc.liu.se
+ * extras: mirror.nsc.liu.se
+ * updates: mirror.nsc.liu.se
+Excluding 2 updates due to versionlock (use "yum versionlock status" to show them)
+Resolving Dependencies
+--> Running transaction check
+---> Package kernel-rt.x86_64 0:3.10.0-1160.6.1.rt56.1139.el7 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+======================================================================================================================================================================
+ Package                              Arch                              Version                                                   Repository                     Size
+======================================================================================================================================================================
+Installing:
+ kernel-rt                            x86_64                            3.10.0-1160.6.1.rt56.1139.el7                             rt                             52 M
+
+Transaction Summary
+======================================================================================================================================================================
+Install  1 Package
+
+Total download size: 52 M
+Installed size: 65 M
+Is this ok [y/d/N]: y
+Downloading packages:
+kernel-rt-3.10.0-1160.6.1.rt56 FAILED                                          ====================================================-] 397 kB/s |  52 MB  00:00:00 ETA 
+http://mirror.centos.org/centos/7/rt/x86_64/Packages/kernel-rt-3.10.0-1160.6.1.rt56.1139.el7.x86_64.rpm: [Errno -1] Package does not match intended download. Suggestion: run yum --enablerepo=rt clean metadata
+Trying other mirror.
+
+
+Error downloading packages:
+  kernel-rt-3.10.0-1160.6.1.rt56.1139.el7.x86_64: [Errno 256] No more mirrors to try.

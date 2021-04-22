@@ -1,0 +1,18 @@
+
+# Stephane wanted me to test an slightly older kernel in Centos repo instead of CERN repo
+
+kernel to test on lenovo                              : 3.10.0-1160.6.1.rt56.1139.el7   (Centos rt)
+kernel that works with lenovo                         : 3.10.0-1160.11.1.rt56.1145.el7  (CERN)
+kernel installed by cs-entry (not wroking with lenovo): 3.10.0-1062.12.1.rt56.1042.el7.x86_64 (older cern locally compiled at ess because of issues with repos)
+
+1. Make sure corretc repo in /etc/yum.repos.d/
+
+
+
+2.
+sudo yum install  kernel-rt-3.10.0-1160.6.1.rt56.1139.el7
+
+failed: Need to issue:
+3. yum --enablerepo=rt clean metadata
+execute again:
+sudo yum install  kernel-rt-3.10.0-1160.6.1.rt56.1139.el7
