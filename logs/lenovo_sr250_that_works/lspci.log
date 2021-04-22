@@ -1,0 +1,173 @@
+00:00.0 Host bridge: Intel Corporation 8th/9th Gen Core Processor Host Bridge/DRAM Registers [Coffee Lake] (rev 07)
+	Subsystem: Intel Corporation Device 7270
+	Flags: bus master, fast devsel, latency 0
+	Capabilities: <access denied>
+	Kernel driver in use: skl_uncore
+
+00:01.0 PCI bridge: Intel Corporation Xeon E3-1200 v5/E3-1500 v5/6th Gen Core Processor PCIe Controller (x16) (rev 07) (prog-if 00 [Normal decode])
+	Flags: bus master, fast devsel, latency 0, IRQ 121
+	Bus: primary=00, secondary=04, subordinate=04, sec-latency=0
+	Capabilities: <access denied>
+	Kernel driver in use: pcieport
+
+00:01.1 PCI bridge: Intel Corporation Xeon E3-1200 v5/E3-1500 v5/6th Gen Core Processor PCIe Controller (x8) (rev 07) (prog-if 00 [Normal decode])
+	Flags: bus master, fast devsel, latency 0, IRQ 122
+	Bus: primary=00, secondary=05, subordinate=05, sec-latency=0
+	Capabilities: <access denied>
+	Kernel driver in use: pcieport
+
+00:08.0 System peripheral: Intel Corporation Xeon E3-1200 v5/v6 / E3-1500 v5 / 6th/7th/8th Gen Core Processor Gaussian Mixture Model
+	Subsystem: Intel Corporation Device 7270
+	Flags: fast devsel, IRQ 11
+	Memory at 400011b000 (64-bit, non-prefetchable) [disabled] [size=4K]
+	Capabilities: <access denied>
+
+00:12.0 Signal processing controller: Intel Corporation Cannon Lake PCH Thermal Controller (rev 10)
+	Subsystem: Intel Corporation Device 7270
+	Flags: fast devsel, IRQ 11
+	Memory at 400011a000 (64-bit, non-prefetchable) [size=4K]
+	Capabilities: <access denied>
+
+00:14.0 USB controller: Intel Corporation Cannon Lake PCH USB 3.1 xHCI Host Controller (rev 10) (prog-if 30 [XHCI])
+	Subsystem: Intel Corporation Device 7270
+	Flags: bus master, medium devsel, latency 0, IRQ 125
+	Memory at 4000100000 (64-bit, non-prefetchable) [size=64K]
+	Capabilities: <access denied>
+	Kernel driver in use: xhci_hcd
+
+00:14.2 RAM memory: Intel Corporation Cannon Lake PCH Shared SRAM (rev 10)
+	Subsystem: Intel Corporation Device 7270
+	Flags: fast devsel
+	Memory at 4000110000 (64-bit, non-prefetchable) [disabled] [size=8K]
+	Memory at 4000119000 (64-bit, non-prefetchable) [disabled] [size=4K]
+	Capabilities: <access denied>
+
+00:15.0 Serial bus controller [0c80]: Intel Corporation Cannon Lake PCH Serial IO I2C Controller #0 (rev 10)
+	Subsystem: Intel Corporation Device 7270
+	Flags: bus master, fast devsel, latency 0, IRQ 16
+	Memory at 4000113000 (64-bit, non-prefetchable) [size=4K]
+	Capabilities: <access denied>
+	Kernel driver in use: intel-lpss
+
+00:15.1 Serial bus controller [0c80]: Intel Corporation Cannon Lake PCH Serial IO I2C Controller #1 (rev 10)
+	Subsystem: Intel Corporation Device 7270
+	Flags: bus master, fast devsel, latency 0, IRQ 17
+	Memory at 4000117000 (64-bit, non-prefetchable) [size=4K]
+	Capabilities: <access denied>
+	Kernel driver in use: intel-lpss
+
+00:16.0 Communication controller: Intel Corporation Cannon Lake PCH HECI Controller (rev 10)
+	Subsystem: Intel Corporation Device 7270
+	Flags: bus master, fast devsel, latency 0, IRQ 491
+	Memory at 4000116000 (64-bit, non-prefetchable) [size=4K]
+	Capabilities: <access denied>
+	Kernel driver in use: mei_me
+	Kernel modules: mei_me
+
+00:16.1 Communication controller: Intel Corporation Device a361 (rev 10)
+	Subsystem: Intel Corporation Device 7270
+	Flags: bus master, fast devsel, latency 0, IRQ 11
+	Memory at 4000115000 (64-bit, non-prefetchable) [size=4K]
+	Capabilities: <access denied>
+
+00:16.4 Communication controller: Intel Corporation Cannon Lake PCH HECI Controller #2 (rev 10)
+	Subsystem: Intel Corporation Device 7270
+	Flags: bus master, fast devsel, latency 0, IRQ 492
+	Memory at 4000114000 (64-bit, non-prefetchable) [size=4K]
+	Capabilities: <access denied>
+	Kernel driver in use: mei_me
+	Kernel modules: mei_me
+
+00:17.0 SATA controller: Intel Corporation Cannon Lake PCH SATA AHCI Controller (rev 10) (prog-if 01 [AHCI 1.0])
+	Subsystem: Lenovo Device 0108
+	Flags: bus master, 66MHz, medium devsel, latency 0, IRQ 126
+	Memory at 91d00000 (32-bit, non-prefetchable) [size=8K]
+	Memory at 91d03000 (32-bit, non-prefetchable) [size=256]
+	I/O ports at 3050 [size=8]
+	I/O ports at 3040 [size=4]
+	I/O ports at 3020 [size=32]
+	Memory at 91d02000 (32-bit, non-prefetchable) [size=2K]
+	Capabilities: <access denied>
+	Kernel driver in use: ahci
+	Kernel modules: ahci
+
+00:1c.0 PCI bridge: Intel Corporation Cannon Lake PCH PCI Express Root Port #1 (rev f0) (prog-if 00 [Normal decode])
+	Flags: bus master, fast devsel, latency 0, IRQ 123
+	Bus: primary=00, secondary=01, subordinate=02, sec-latency=0
+	Memory behind bridge: 90000000-91bfffff
+	Capabilities: <access denied>
+	Kernel driver in use: pcieport
+
+00:1c.1 PCI bridge: Intel Corporation Cannon Lake PCH PCI Express Root Port #2 (rev f0) (prog-if 00 [Normal decode])
+	Flags: bus master, fast devsel, latency 0, IRQ 124
+	Bus: primary=00, secondary=03, subordinate=03, sec-latency=0
+	Memory behind bridge: 91c00000-91cfffff
+	Prefetchable memory behind bridge: 0000004000000000-00000040000fffff
+	Capabilities: <access denied>
+	Kernel driver in use: pcieport
+
+00:1e.0 Communication controller: Intel Corporation Cannon Lake PCH Serial IO UART Host Controller (rev 10)
+	Subsystem: Intel Corporation Device 7270
+	Flags: bus master, fast devsel, latency 0, IRQ 20
+	Memory at 4000118000 (64-bit, non-prefetchable) [size=4K]
+	Capabilities: <access denied>
+	Kernel driver in use: intel-lpss
+
+00:1f.0 ISA bridge: Intel Corporation Cannon Point-LP LPC Controller (rev 10)
+	Subsystem: Intel Corporation Device 7270
+	Flags: bus master, fast devsel, latency 0
+
+00:1f.4 SMBus: Intel Corporation Cannon Lake PCH SMBus Controller (rev 10)
+	Subsystem: Intel Corporation Device 7270
+	Flags: medium devsel, IRQ 16
+	Memory at 4000112000 (64-bit, non-prefetchable) [size=256]
+	I/O ports at efa0 [size=32]
+	Kernel driver in use: i801_smbus
+	Kernel modules: i2c_i801
+
+00:1f.5 Serial bus controller [0c80]: Intel Corporation Cannon Lake PCH SPI Controller (rev 10)
+	Subsystem: Intel Corporation Device 7270
+	Flags: fast devsel
+	Memory at fe010000 (32-bit, non-prefetchable) [size=4K]
+
+01:00.0 PCI bridge: Emulex Corporation x1 PCIe Gen2 Bridge[Pilot4] (prog-if 00 [Normal decode])
+	Flags: bus master, fast devsel, latency 0, IRQ 16
+	Memory at 91b00000 (64-bit, non-prefetchable) [size=4K]
+	Bus: primary=01, secondary=02, subordinate=02, sec-latency=0
+	Memory behind bridge: 90000000-91afffff
+	Prefetchable memory behind bridge: 00000000-000fffff
+	Capabilities: <access denied>
+
+02:00.0 VGA compatible controller: Matrox Electronics Systems Ltd. MGA G200e [Pilot] ServerEngines (SEP1) (rev 42) (prog-if 00 [VGA controller])
+	Subsystem: Emulex Corporation Device 0101
+	Flags: bus master, fast devsel, latency 0, IRQ 16
+	Memory at 90000000 (32-bit, non-prefetchable) [size=16M]
+	Memory at 91a10000 (32-bit, non-prefetchable) [size=16K]
+	Memory at 91000000 (32-bit, non-prefetchable) [size=8M]
+	Expansion ROM at 91a00000 [disabled] [size=64K]
+	Capabilities: <access denied>
+	Kernel driver in use: mgag200
+	Kernel modules: mgag200
+
+03:00.0 Ethernet controller: Broadcom Inc. and subsidiaries NetXtreme BCM5720 2-port Gigabit Ethernet PCIe
+	Subsystem: Lenovo Device 4042
+	Flags: bus master, fast devsel, latency 0, IRQ 17
+	Memory at 4000050000 (64-bit, prefetchable) [size=64K]
+	Memory at 4000040000 (64-bit, prefetchable) [size=64K]
+	Memory at 4000030000 (64-bit, prefetchable) [size=64K]
+	Expansion ROM at 91c40000 [disabled] [size=256K]
+	Capabilities: <access denied>
+	Kernel driver in use: tg3
+	Kernel modules: tg3
+
+03:00.1 Ethernet controller: Broadcom Inc. and subsidiaries NetXtreme BCM5720 2-port Gigabit Ethernet PCIe
+	Subsystem: Lenovo Device 4042
+	Flags: bus master, fast devsel, latency 0, IRQ 18
+	Memory at 4000020000 (64-bit, prefetchable) [size=64K]
+	Memory at 4000010000 (64-bit, prefetchable) [size=64K]
+	Memory at 4000000000 (64-bit, prefetchable) [size=64K]
+	Expansion ROM at 91c00000 [disabled] [size=256K]
+	Capabilities: <access denied>
+	Kernel driver in use: tg3
+	Kernel modules: tg3
+
