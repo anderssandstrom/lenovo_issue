@@ -1,0 +1,96 @@
+Module                  Size  Used by
+tcp_lp                 12663  0 
+xt_CHECKSUM            12549  1 
+iptable_mangle         12695  1 
+ipt_MASQUERADE         12678  3 
+nf_nat_masquerade_ipv4    13463  1 ipt_MASQUERADE
+iptable_nat            12875  1 
+nf_nat_ipv4            14115  1 iptable_nat
+nf_nat                 26583  2 nf_nat_ipv4,nf_nat_masquerade_ipv4
+nf_conntrack_ipv4      15053  2 
+nf_defrag_ipv4         12729  1 nf_conntrack_ipv4
+xt_conntrack           12760  1 
+nf_conntrack          184464  5 nf_nat,nf_nat_ipv4,xt_conntrack,nf_nat_masquerade_ipv4,nf_conntrack_ipv4
+ipt_REJECT             12541  2 
+nf_reject_ipv4         13373  1 ipt_REJECT
+devlink                60067  0 
+tun                    36306  1 
+bridge                151459  0 
+stp                    12976  1 bridge
+llc                    14588  2 stp,bridge
+ebtable_filter         12827  0 
+ebtables               35045  1 ebtable_filter
+ip6table_filter        12815  0 
+ip6_tables             26912  1 ip6table_filter
+iptable_filter         12810  1 
+ec_generic             13125  0 
+ec_master             268670  1 ec_generic
+sunrpc                367299  1 
+iTCO_wdt               13608  0 
+iTCO_vendor_support    13242  1 iTCO_wdt
+vfat                   17461  1 
+fat                    66058  1 vfat
+ipmi_ssif              29661  0 
+coretemp               13444  0 
+intel_rapl             19451  0 
+iosf_mbi               15582  1 intel_rapl
+crc32_pclmul           13133  0 
+ghash_clmulni_intel    13273  0 
+aesni_intel           193557  1 
+lrw                    13286  1 aesni_intel
+gf128mul               15139  1 lrw
+glue_helper            13990  1 aesni_intel
+ablk_helper            13597  1 aesni_intel
+cryptd                 21189  3 ghash_clmulni_intel,aesni_intel,ablk_helper
+pcspkr                 12718  0 
+joydev                 17461  0 
+sg                     40791  0 
+mei_me                 32848  0 
+i2c_i801               22736  0 
+mei                    95246  1 mei_me
+idma64                 17483  0 
+i2c_designware_platform    12921  0 
+i2c_designware_core    18779  1 i2c_designware_platform
+virt_dma               13362  1 idma64
+wmi                    21636  0 
+ipmi_si                60001  0 
+ipmi_devintf           17495  0 
+ipmi_msghandler        56908  3 ipmi_ssif,ipmi_devintf,ipmi_si
+video                  24538  0 
+pinctrl_cannonlake     31687  0 
+pinctrl_intel          23466  1 pinctrl_cannonlake
+tpm_crb                13639  0 
+acpi_power_meter       18104  0 
+ip_tables              27126  3 iptable_filter,iptable_mangle,iptable_nat
+xfs                  1023018  3 
+libcrc32c              12644  3 xfs,nf_nat,nf_conntrack
+sd_mod                 46281  4 
+crc_t10dif             12912  1 sd_mod
+crct10dif_generic      12647  0 
+mgag200                40982  2 
+i2c_algo_bit           13413  1 mgag200
+drm_kms_helper        186567  1 mgag200
+syscopyarea            12529  1 drm_kms_helper
+sysfillrect            12701  1 drm_kms_helper
+sysimgblt              12640  1 drm_kms_helper
+fb_sys_fops            12703  1 drm_kms_helper
+ttm                    96852  1 mgag200
+crct10dif_pclmul       14307  1 
+ahci                   34056  3 
+crct10dif_common       12595  3 crct10dif_pclmul,crct10dif_generic,crc_t10dif
+drm                   460961  5 ttm,drm_kms_helper,mgag200
+crc32c_intel           22094  1 
+libahci                32028  1 ahci
+tg3                   174917  0 
+libata                243220  2 ahci,libahci
+ptp                    23587  1 tg3
+drm_panel_orientation_quirks    17180  1 drm
+pps_core               19093  1 ptp
+i2c_hid                18877  0 
+uas                    22517  0 
+usb_storage            66718  1 uas
+dm_mirror              22316  0 
+dm_region_hash         20885  1 dm_mirror
+dm_log                 18411  2 dm_region_hash,dm_mirror
+dm_mod                128741  11 dm_log,dm_mirror
+fuse                   96372  3 
