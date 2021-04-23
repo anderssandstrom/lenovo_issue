@@ -1,0 +1,28 @@
+
+>>>>  Configuration Options Variables   <<<<
+
+E3_EHTERLAB_CONF_OPTIONS is defined as the follows:
+
+--enable-generic --disable-8139too --disable-e100 --disable-e1000 --disable-e1000e --disable-igb --disable-r8169 --disable-ccat --enable-static=yes --enable-shared=yes --enable-eoe=no --enable-cycles=yes --enable-hrtimer=no --enable-regalias=no --enable-tool=yes --enable-userlib=yes --enable-sii-assign=yes --enable-rt-syslog=yes
+
+WITH_PATCHSET = NO
+
+WITH_DEV_8139TOO = NO
+WITH_DEV_CCAT = NO
+WITH_DEV_E100 = NO
+WITH_DEV_E1000 = NO
+WITH_DEV_E1000E = NO
+WITH_DEV_GENERIC = YES
+WITH_DEV_IGB = NO
+WITH_DEV_R8169 = NO
+
+ENABLE_CYCLES = YES
+ENABLE_EOE = NO
+ENABLE_HRTIMER = NO
+ENABLE_REGALIAS = NO
+ENABLE_RT_SYSLOG = YES
+ENABLE_SII_ASSIGN = YES
+ENABLE_STATIC = YES
+ENABLE_TOOL = YES
+ENABLE_USERLIB = YES
+
