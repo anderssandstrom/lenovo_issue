@@ -1,0 +1,1665 @@
+[anderssandstrom@mcag-ecmc-lenovo-std-01 etherlabmaster]$ make init
+hg clone http://hg.code.sf.net/p/etherlabmaster/code etherlabmaster-code -r stable-1.5
+adding changesets
+adding manifests
+adding file changes
+added 2304 changesets with 8727 changes to 1651 files
+updating to branch stable-1.5
+1258 files updated, 0 files merged, 0 files removed, 0 files unresolved
+8 files updated, 0 files merged, 0 files removed, 0 files unresolved
+0c011dc6dbc4 2296 stable-1.5
+make patch
+make[1]: Entering directory `/home/anderssandstrom/sources/etherlabmaster'
+
+Patching etherlabmaster-code with the file : /home/anderssandstrom/sources/etherlabmaster/patch/Site/use_prefix_for_ethercat_conf_path.p0.patch
+patching file script/ethercatctl.in
+
+Patching etherlabmaster-code with the file : /home/anderssandstrom/sources/etherlabmaster/patch/Site/after_dkms_service_patch.p0.patch
+patching file script/ethercat.service.in
+make[1]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster'
+[anderssandstrom@mcag-ecmc-lenovo-std-01 etherlabmaster]$ make build
+make[1]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+touch ChangeLog
+autoreconf --force --install -v
+autoreconf: Entering directory `.'
+autoreconf: configure.ac: not using Gettext
+autoreconf: running: aclocal --force -I m4
+autoreconf: configure.ac: tracing
+autoreconf: configure.ac: creating directory autoconf
+autoreconf: running: libtoolize --copy --force
+libtoolize: putting auxiliary files in AC_CONFIG_AUX_DIR, `autoconf'.
+libtoolize: copying file `autoconf/ltmain.sh'
+libtoolize: putting macros in AC_CONFIG_MACRO_DIR, `m4'.
+libtoolize: copying file `m4/libtool.m4'
+libtoolize: copying file `m4/ltoptions.m4'
+libtoolize: copying file `m4/ltsugar.m4'
+libtoolize: copying file `m4/ltversion.m4'
+libtoolize: copying file `m4/lt~obsolete.m4'
+autoreconf: running: /usr/bin/autoconf --force
+autoreconf: running: /usr/bin/autoheader --force
+autoreconf: running: automake --add-missing --copy --force-missing
+configure.ac:54: installing 'autoconf/ar-lib'
+configure.ac:53: installing 'autoconf/compile'
+configure.ac:56: installing 'autoconf/config.guess'
+configure.ac:56: installing 'autoconf/config.sub'
+configure.ac:44: installing 'autoconf/install-sh'
+configure.ac:44: installing 'autoconf/missing'
+examples/dc_user/Makefile.am: installing 'autoconf/depcomp'
+autoreconf: Leaving directory `.'
+./configure --enable-generic --disable-8139too --disable-e100 --disable-e1000 --disable-e1000e --disable-igb --disable-r8169 --disable-ccat --enable-static=yes --enable-shared=yes --enable-eoe=no --enable-cycles=yes --enable-hrtimer=no --enable-regalias=no --enable-tool=yes --enable-userlib=yes --enable-sii-assign=yes --enable-rt-syslog=yes --prefix=/opt/etherlab
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking for style of include used by make... GNU
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking dependency style of gcc... gcc3
+checking whether gcc and cc understand -c and -o together... yes
+checking for ar... ar
+checking the archiver (ar) interface... ar
+checking for g++... g++
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ accepts -g... yes
+checking dependency style of g++... gcc3
+checking build system type... x86_64-unknown-linux-gnu
+checking host system type... x86_64-unknown-linux-gnu
+checking how to print strings... printf
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for fgrep... /usr/bin/grep -F
+checking for ld used by gcc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking whether the shell understands some XSI constructs... yes
+checking whether the shell understands "+="... yes
+checking how to convert x86_64-unknown-linux-gnu file names to x86_64-unknown-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-unknown-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+checking for sysroot... no
+checking for mt... no
+checking if : is a manifest tool... no
+checking how to run the C preprocessor... gcc -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... no
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking how to run the C++ preprocessor... g++ -E
+checking for ld used by g++... /usr/bin/ld -m elf_x86_64
+checking if the linker (/usr/bin/ld -m elf_x86_64) is GNU ld... yes
+checking whether the g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking for g++ option to produce PIC... -fPIC -DPIC
+checking if g++ PIC flag -fPIC -DPIC works... yes
+checking if g++ static flag -static works... no
+checking if g++ supports -c -o file.o... yes
+checking if g++ supports -c -o file.o... (cached) yes
+checking whether the g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking dynamic linker characteristics... (cached) GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether to build kernel modules... yes
+checking for Linux kernel sources... /usr/src/kernels/3.10.0-1062.12.1.rt56.1042.el7.x86_64 (Kernel 3.10)
+checking for Linux modules installation directory... ethercat
+checking whether to build the CCAT driver... no
+checking for RTAI path... not specified.
+checking for Xenomai path... not specified.
+checking whether to build RTDM interface... no
+checking whether to build the debug interface... no
+checking whether to build the debug ring... no
+checking whether to build with EoE support... no
+checking whether to use the CPU timestamp counter... yes
+checking whether to use high-resolution timers for scheduling... no
+checking whether to read alias addresses from registers... no
+checking whether to build the command-line tool... yes
+checking whether to build the userspace library... yes
+checking whether to build the tty driver... no
+checking whether to allow identification wildcards... no
+checking for number of Ethernet devices... 1 (Redundancy disabled)
+checking whether to assign the SII to PDI... yes
+checking whether to syslog in realtime context... yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Doxyfile
+config.status: creating Kbuild
+config.status: creating Makefile
+config.status: creating devices/Kbuild
+config.status: creating devices/Makefile
+config.status: creating devices/ccat/Kbuild
+config.status: creating devices/ccat/Makefile
+config.status: creating devices/e1000/Kbuild
+config.status: creating devices/e1000/Makefile
+config.status: creating devices/e1000e/Kbuild
+config.status: creating devices/e1000e/Makefile
+config.status: creating devices/igb/Kbuild
+config.status: creating devices/igb/Makefile
+config.status: creating ethercat.spec
+config.status: creating examples/Kbuild
+config.status: creating examples/Makefile
+config.status: creating examples/dc_rtai/Kbuild
+config.status: creating examples/dc_rtai/Makefile
+config.status: creating examples/dc_user/Makefile
+config.status: creating examples/mini/Kbuild
+config.status: creating examples/mini/Makefile
+config.status: creating examples/rtai/Kbuild
+config.status: creating examples/rtai/Makefile
+config.status: creating examples/rtai_rtdm/Makefile
+config.status: creating examples/rtai_rtdm_dc/Makefile
+config.status: creating examples/tty/Kbuild
+config.status: creating examples/tty/Makefile
+config.status: creating examples/user/Makefile
+config.status: creating examples/xenomai/Makefile
+config.status: creating examples/xenomai_posix/Makefile
+config.status: creating include/Makefile
+config.status: creating lib/Makefile
+config.status: creating m4/Makefile
+config.status: creating master/Kbuild
+config.status: creating master/Makefile
+config.status: creating script/Makefile
+config.status: creating script/ethercat.service
+config.status: creating script/ethercatctl
+config.status: creating script/init.d/Makefile
+config.status: creating script/init.d/ethercat
+config.status: creating script/sysconfig/Makefile
+config.status: creating tool/Makefile
+config.status: creating tty/Kbuild
+config.status: creating tty/Makefile
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+make[1]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+make[1]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+make
+make[2]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+make  all-recursive
+make[3]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+Making all in include
+make[4]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/include'
+make[4]: Nothing to be done for `all'.
+make[4]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/include'
+Making all in script
+make[4]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script'
+make  all-recursive
+make[5]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script'
+Making all in init.d
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script/init.d'
+make  all-am
+make[7]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script/init.d'
+make[7]: Nothing to be done for `all-am'.
+make[7]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script/init.d'
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script/init.d'
+Making all in sysconfig
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script/sysconfig'
+make[6]: Nothing to be done for `all'.
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script/sysconfig'
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script'
+make[6]: Nothing to be done for `all-am'.
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script'
+make[5]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script'
+make[4]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script'
+Making all in devices
+make[4]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices'
+make  all-recursive
+make[5]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices'
+Making all in ccat
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/ccat'
+make  all-am
+make[7]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/ccat'
+make[7]: Nothing to be done for `all-am'.
+make[7]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/ccat'
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/ccat'
+Making all in e1000
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/e1000'
+make  all-am
+make[7]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/e1000'
+make[7]: Nothing to be done for `all-am'.
+make[7]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/e1000'
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/e1000'
+Making all in e1000e
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/e1000e'
+make  all-am
+make[7]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/e1000e'
+make[7]: Nothing to be done for `all-am'.
+make[7]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/e1000e'
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/e1000e'
+Making all in igb
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/igb'
+make  all-am
+make[7]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/igb'
+make[7]: Nothing to be done for `all-am'.
+make[7]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/igb'
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/igb'
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices'
+make[6]: Nothing to be done for `all-am'.
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices'
+make[5]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices'
+make[4]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices'
+Making all in master
+make[4]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/master'
+make  all-am
+make[5]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/master'
+make[5]: Nothing to be done for `all-am'.
+make[5]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/master'
+make[4]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/master'
+Making all in tool
+make[4]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/tool'
+depbase=`echo ../master/soe_errors.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -DHAVE_CONFIG_H -I. -I..     -g -O2 -MT ../master/soe_errors.o -MD -MP -MF $depbase.Tpo -c -o ../master/soe_errors.o ../master/soe_errors.c &&\
+mv -f $depbase.Tpo $depbase.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-Command.o -MD -MP -MF .deps/ethercat-Command.Tpo -c -o ethercat-Command.o `test -f 'Command.cpp' || echo './'`Command.cpp
+mv -f .deps/ethercat-Command.Tpo .deps/ethercat-Command.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-CommandAlias.o -MD -MP -MF .deps/ethercat-CommandAlias.Tpo -c -o ethercat-CommandAlias.o `test -f 'CommandAlias.cpp' || echo './'`CommandAlias.cpp
+mv -f .deps/ethercat-CommandAlias.Tpo .deps/ethercat-CommandAlias.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-CommandCrc.o -MD -MP -MF .deps/ethercat-CommandCrc.Tpo -c -o ethercat-CommandCrc.o `test -f 'CommandCrc.cpp' || echo './'`CommandCrc.cpp
+mv -f .deps/ethercat-CommandCrc.Tpo .deps/ethercat-CommandCrc.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-CommandCStruct.o -MD -MP -MF .deps/ethercat-CommandCStruct.Tpo -c -o ethercat-CommandCStruct.o `test -f 'CommandCStruct.cpp' || echo './'`CommandCStruct.cpp
+mv -f .deps/ethercat-CommandCStruct.Tpo .deps/ethercat-CommandCStruct.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-CommandConfig.o -MD -MP -MF .deps/ethercat-CommandConfig.Tpo -c -o ethercat-CommandConfig.o `test -f 'CommandConfig.cpp' || echo './'`CommandConfig.cpp
+mv -f .deps/ethercat-CommandConfig.Tpo .deps/ethercat-CommandConfig.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-CommandData.o -MD -MP -MF .deps/ethercat-CommandData.Tpo -c -o ethercat-CommandData.o `test -f 'CommandData.cpp' || echo './'`CommandData.cpp
+mv -f .deps/ethercat-CommandData.Tpo .deps/ethercat-CommandData.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-CommandDebug.o -MD -MP -MF .deps/ethercat-CommandDebug.Tpo -c -o ethercat-CommandDebug.o `test -f 'CommandDebug.cpp' || echo './'`CommandDebug.cpp
+mv -f .deps/ethercat-CommandDebug.Tpo .deps/ethercat-CommandDebug.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-CommandDomains.o -MD -MP -MF .deps/ethercat-CommandDomains.Tpo -c -o ethercat-CommandDomains.o `test -f 'CommandDomains.cpp' || echo './'`CommandDomains.cpp
+mv -f .deps/ethercat-CommandDomains.Tpo .deps/ethercat-CommandDomains.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-CommandDownload.o -MD -MP -MF .deps/ethercat-CommandDownload.Tpo -c -o ethercat-CommandDownload.o `test -f 'CommandDownload.cpp' || echo './'`CommandDownload.cpp
+mv -f .deps/ethercat-CommandDownload.Tpo .deps/ethercat-CommandDownload.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-CommandFoeRead.o -MD -MP -MF .deps/ethercat-CommandFoeRead.Tpo -c -o ethercat-CommandFoeRead.o `test -f 'CommandFoeRead.cpp' || echo './'`CommandFoeRead.cpp
+mv -f .deps/ethercat-CommandFoeRead.Tpo .deps/ethercat-CommandFoeRead.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-CommandFoeWrite.o -MD -MP -MF .deps/ethercat-CommandFoeWrite.Tpo -c -o ethercat-CommandFoeWrite.o `test -f 'CommandFoeWrite.cpp' || echo './'`CommandFoeWrite.cpp
+mv -f .deps/ethercat-CommandFoeWrite.Tpo .deps/ethercat-CommandFoeWrite.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-CommandGraph.o -MD -MP -MF .deps/ethercat-CommandGraph.Tpo -c -o ethercat-CommandGraph.o `test -f 'CommandGraph.cpp' || echo './'`CommandGraph.cpp
+mv -f .deps/ethercat-CommandGraph.Tpo .deps/ethercat-CommandGraph.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-CommandMaster.o -MD -MP -MF .deps/ethercat-CommandMaster.Tpo -c -o ethercat-CommandMaster.o `test -f 'CommandMaster.cpp' || echo './'`CommandMaster.cpp
+mv -f .deps/ethercat-CommandMaster.Tpo .deps/ethercat-CommandMaster.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-CommandPdos.o -MD -MP -MF .deps/ethercat-CommandPdos.Tpo -c -o ethercat-CommandPdos.o `test -f 'CommandPdos.cpp' || echo './'`CommandPdos.cpp
+mv -f .deps/ethercat-CommandPdos.Tpo .deps/ethercat-CommandPdos.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-CommandRegRead.o -MD -MP -MF .deps/ethercat-CommandRegRead.Tpo -c -o ethercat-CommandRegRead.o `test -f 'CommandRegRead.cpp' || echo './'`CommandRegRead.cpp
+mv -f .deps/ethercat-CommandRegRead.Tpo .deps/ethercat-CommandRegRead.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-CommandRegWrite.o -MD -MP -MF .deps/ethercat-CommandRegWrite.Tpo -c -o ethercat-CommandRegWrite.o `test -f 'CommandRegWrite.cpp' || echo './'`CommandRegWrite.cpp
+mv -f .deps/ethercat-CommandRegWrite.Tpo .deps/ethercat-CommandRegWrite.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-CommandRescan.o -MD -MP -MF .deps/ethercat-CommandRescan.Tpo -c -o ethercat-CommandRescan.o `test -f 'CommandRescan.cpp' || echo './'`CommandRescan.cpp
+mv -f .deps/ethercat-CommandRescan.Tpo .deps/ethercat-CommandRescan.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-CommandSdos.o -MD -MP -MF .deps/ethercat-CommandSdos.Tpo -c -o ethercat-CommandSdos.o `test -f 'CommandSdos.cpp' || echo './'`CommandSdos.cpp
+mv -f .deps/ethercat-CommandSdos.Tpo .deps/ethercat-CommandSdos.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-CommandSiiRead.o -MD -MP -MF .deps/ethercat-CommandSiiRead.Tpo -c -o ethercat-CommandSiiRead.o `test -f 'CommandSiiRead.cpp' || echo './'`CommandSiiRead.cpp
+mv -f .deps/ethercat-CommandSiiRead.Tpo .deps/ethercat-CommandSiiRead.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-CommandSiiWrite.o -MD -MP -MF .deps/ethercat-CommandSiiWrite.Tpo -c -o ethercat-CommandSiiWrite.o `test -f 'CommandSiiWrite.cpp' || echo './'`CommandSiiWrite.cpp
+mv -f .deps/ethercat-CommandSiiWrite.Tpo .deps/ethercat-CommandSiiWrite.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-CommandSlaves.o -MD -MP -MF .deps/ethercat-CommandSlaves.Tpo -c -o ethercat-CommandSlaves.o `test -f 'CommandSlaves.cpp' || echo './'`CommandSlaves.cpp
+mv -f .deps/ethercat-CommandSlaves.Tpo .deps/ethercat-CommandSlaves.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-CommandSoeRead.o -MD -MP -MF .deps/ethercat-CommandSoeRead.Tpo -c -o ethercat-CommandSoeRead.o `test -f 'CommandSoeRead.cpp' || echo './'`CommandSoeRead.cpp
+mv -f .deps/ethercat-CommandSoeRead.Tpo .deps/ethercat-CommandSoeRead.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-CommandSoeWrite.o -MD -MP -MF .deps/ethercat-CommandSoeWrite.Tpo -c -o ethercat-CommandSoeWrite.o `test -f 'CommandSoeWrite.cpp' || echo './'`CommandSoeWrite.cpp
+mv -f .deps/ethercat-CommandSoeWrite.Tpo .deps/ethercat-CommandSoeWrite.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-CommandStates.o -MD -MP -MF .deps/ethercat-CommandStates.Tpo -c -o ethercat-CommandStates.o `test -f 'CommandStates.cpp' || echo './'`CommandStates.cpp
+mv -f .deps/ethercat-CommandStates.Tpo .deps/ethercat-CommandStates.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-CommandUpload.o -MD -MP -MF .deps/ethercat-CommandUpload.Tpo -c -o ethercat-CommandUpload.o `test -f 'CommandUpload.cpp' || echo './'`CommandUpload.cpp
+mv -f .deps/ethercat-CommandUpload.Tpo .deps/ethercat-CommandUpload.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-CommandVersion.o -MD -MP -MF .deps/ethercat-CommandVersion.Tpo -c -o ethercat-CommandVersion.o `test -f 'CommandVersion.cpp' || echo './'`CommandVersion.cpp
+mv -f .deps/ethercat-CommandVersion.Tpo .deps/ethercat-CommandVersion.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-CommandXml.o -MD -MP -MF .deps/ethercat-CommandXml.Tpo -c -o ethercat-CommandXml.o `test -f 'CommandXml.cpp' || echo './'`CommandXml.cpp
+mv -f .deps/ethercat-CommandXml.Tpo .deps/ethercat-CommandXml.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-DataTypeHandler.o -MD -MP -MF .deps/ethercat-DataTypeHandler.Tpo -c -o ethercat-DataTypeHandler.o `test -f 'DataTypeHandler.cpp' || echo './'`DataTypeHandler.cpp
+mv -f .deps/ethercat-DataTypeHandler.Tpo .deps/ethercat-DataTypeHandler.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-FoeCommand.o -MD -MP -MF .deps/ethercat-FoeCommand.Tpo -c -o ethercat-FoeCommand.o `test -f 'FoeCommand.cpp' || echo './'`FoeCommand.cpp
+mv -f .deps/ethercat-FoeCommand.Tpo .deps/ethercat-FoeCommand.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-MasterDevice.o -MD -MP -MF .deps/ethercat-MasterDevice.Tpo -c -o ethercat-MasterDevice.o `test -f 'MasterDevice.cpp' || echo './'`MasterDevice.cpp
+mv -f .deps/ethercat-MasterDevice.Tpo .deps/ethercat-MasterDevice.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-NumberListParser.o -MD -MP -MF .deps/ethercat-NumberListParser.Tpo -c -o ethercat-NumberListParser.o `test -f 'NumberListParser.cpp' || echo './'`NumberListParser.cpp
+mv -f .deps/ethercat-NumberListParser.Tpo .deps/ethercat-NumberListParser.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-SdoCommand.o -MD -MP -MF .deps/ethercat-SdoCommand.Tpo -c -o ethercat-SdoCommand.o `test -f 'SdoCommand.cpp' || echo './'`SdoCommand.cpp
+mv -f .deps/ethercat-SdoCommand.Tpo .deps/ethercat-SdoCommand.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-SoeCommand.o -MD -MP -MF .deps/ethercat-SoeCommand.Tpo -c -o ethercat-SoeCommand.o `test -f 'SoeCommand.cpp' || echo './'`SoeCommand.cpp
+mv -f .deps/ethercat-SoeCommand.Tpo .deps/ethercat-SoeCommand.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-main.o -MD -MP -MF .deps/ethercat-main.Tpo -c -o ethercat-main.o `test -f 'main.cpp' || echo './'`main.cpp
+mv -f .deps/ethercat-main.Tpo .deps/ethercat-main.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-sii_crc.o -MD -MP -MF .deps/ethercat-sii_crc.Tpo -c -o ethercat-sii_crc.o `test -f 'sii_crc.cpp' || echo './'`sii_crc.cpp
+mv -f .deps/ethercat-sii_crc.Tpo .deps/ethercat-sii_crc.Po
+/bin/sh ../libtool  --tag=CXX   --mode=link g++ -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2   -o ethercat ../master/soe_errors.o ethercat-Command.o ethercat-CommandAlias.o ethercat-CommandCrc.o ethercat-CommandCStruct.o ethercat-CommandConfig.o ethercat-CommandData.o ethercat-CommandDebug.o ethercat-CommandDomains.o ethercat-CommandDownload.o ethercat-CommandFoeRead.o ethercat-CommandFoeWrite.o ethercat-CommandGraph.o ethercat-CommandMaster.o ethercat-CommandPdos.o ethercat-CommandRegRead.o ethercat-CommandRegWrite.o ethercat-CommandRescan.o ethercat-CommandSdos.o ethercat-CommandSiiRead.o ethercat-CommandSiiWrite.o ethercat-CommandSlaves.o ethercat-CommandSoeRead.o ethercat-CommandSoeWrite.o ethercat-CommandStates.o ethercat-CommandUpload.o ethercat-CommandVersion.o ethercat-CommandXml.o ethercat-DataTypeHandler.o ethercat-FoeCommand.o ethercat-MasterDevice.o ethercat-NumberListParser.o ethercat-SdoCommand.o ethercat-SoeCommand.o ethercat-main.o ethercat-sii_crc.o   
+libtool: link: g++ -I../include -I../master -Wall -DREV=0c011dc6dbc4+ -fno-strict-aliasing -g -O2 -o ethercat ../master/soe_errors.o ethercat-Command.o ethercat-CommandAlias.o ethercat-CommandCrc.o ethercat-CommandCStruct.o ethercat-CommandConfig.o ethercat-CommandData.o ethercat-CommandDebug.o ethercat-CommandDomains.o ethercat-CommandDownload.o ethercat-CommandFoeRead.o ethercat-CommandFoeWrite.o ethercat-CommandGraph.o ethercat-CommandMaster.o ethercat-CommandPdos.o ethercat-CommandRegRead.o ethercat-CommandRegWrite.o ethercat-CommandRescan.o ethercat-CommandSdos.o ethercat-CommandSiiRead.o ethercat-CommandSiiWrite.o ethercat-CommandSlaves.o ethercat-CommandSoeRead.o ethercat-CommandSoeWrite.o ethercat-CommandStates.o ethercat-CommandUpload.o ethercat-CommandVersion.o ethercat-CommandXml.o ethercat-DataTypeHandler.o ethercat-FoeCommand.o ethercat-MasterDevice.o ethercat-NumberListParser.o ethercat-SdoCommand.o ethercat-SoeCommand.o ethercat-main.o ethercat-sii_crc.o 
+make[4]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/tool'
+Making all in lib
+make[4]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/lib'
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -fno-strict-aliasing -Wall -I.. -g -O2 -MT libethercat_la-common.lo -MD -MP -MF .deps/libethercat_la-common.Tpo -c -o libethercat_la-common.lo `test -f 'common.c' || echo './'`common.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fno-strict-aliasing -Wall -I.. -g -O2 -MT libethercat_la-common.lo -MD -MP -MF .deps/libethercat_la-common.Tpo -c common.c  -fPIC -DPIC -o .libs/libethercat_la-common.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fno-strict-aliasing -Wall -I.. -g -O2 -MT libethercat_la-common.lo -MD -MP -MF .deps/libethercat_la-common.Tpo -c common.c -o libethercat_la-common.o >/dev/null 2>&1
+mv -f .deps/libethercat_la-common.Tpo .deps/libethercat_la-common.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -fno-strict-aliasing -Wall -I.. -g -O2 -MT libethercat_la-domain.lo -MD -MP -MF .deps/libethercat_la-domain.Tpo -c -o libethercat_la-domain.lo `test -f 'domain.c' || echo './'`domain.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fno-strict-aliasing -Wall -I.. -g -O2 -MT libethercat_la-domain.lo -MD -MP -MF .deps/libethercat_la-domain.Tpo -c domain.c  -fPIC -DPIC -o .libs/libethercat_la-domain.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fno-strict-aliasing -Wall -I.. -g -O2 -MT libethercat_la-domain.lo -MD -MP -MF .deps/libethercat_la-domain.Tpo -c domain.c -o libethercat_la-domain.o >/dev/null 2>&1
+mv -f .deps/libethercat_la-domain.Tpo .deps/libethercat_la-domain.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -fno-strict-aliasing -Wall -I.. -g -O2 -MT libethercat_la-master.lo -MD -MP -MF .deps/libethercat_la-master.Tpo -c -o libethercat_la-master.lo `test -f 'master.c' || echo './'`master.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fno-strict-aliasing -Wall -I.. -g -O2 -MT libethercat_la-master.lo -MD -MP -MF .deps/libethercat_la-master.Tpo -c master.c  -fPIC -DPIC -o .libs/libethercat_la-master.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fno-strict-aliasing -Wall -I.. -g -O2 -MT libethercat_la-master.lo -MD -MP -MF .deps/libethercat_la-master.Tpo -c master.c -o libethercat_la-master.o >/dev/null 2>&1
+mv -f .deps/libethercat_la-master.Tpo .deps/libethercat_la-master.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -fno-strict-aliasing -Wall -I.. -g -O2 -MT libethercat_la-reg_request.lo -MD -MP -MF .deps/libethercat_la-reg_request.Tpo -c -o libethercat_la-reg_request.lo `test -f 'reg_request.c' || echo './'`reg_request.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fno-strict-aliasing -Wall -I.. -g -O2 -MT libethercat_la-reg_request.lo -MD -MP -MF .deps/libethercat_la-reg_request.Tpo -c reg_request.c  -fPIC -DPIC -o .libs/libethercat_la-reg_request.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fno-strict-aliasing -Wall -I.. -g -O2 -MT libethercat_la-reg_request.lo -MD -MP -MF .deps/libethercat_la-reg_request.Tpo -c reg_request.c -o libethercat_la-reg_request.o >/dev/null 2>&1
+mv -f .deps/libethercat_la-reg_request.Tpo .deps/libethercat_la-reg_request.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -fno-strict-aliasing -Wall -I.. -g -O2 -MT libethercat_la-sdo_request.lo -MD -MP -MF .deps/libethercat_la-sdo_request.Tpo -c -o libethercat_la-sdo_request.lo `test -f 'sdo_request.c' || echo './'`sdo_request.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fno-strict-aliasing -Wall -I.. -g -O2 -MT libethercat_la-sdo_request.lo -MD -MP -MF .deps/libethercat_la-sdo_request.Tpo -c sdo_request.c  -fPIC -DPIC -o .libs/libethercat_la-sdo_request.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fno-strict-aliasing -Wall -I.. -g -O2 -MT libethercat_la-sdo_request.lo -MD -MP -MF .deps/libethercat_la-sdo_request.Tpo -c sdo_request.c -o libethercat_la-sdo_request.o >/dev/null 2>&1
+mv -f .deps/libethercat_la-sdo_request.Tpo .deps/libethercat_la-sdo_request.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -fno-strict-aliasing -Wall -I.. -g -O2 -MT libethercat_la-slave_config.lo -MD -MP -MF .deps/libethercat_la-slave_config.Tpo -c -o libethercat_la-slave_config.lo `test -f 'slave_config.c' || echo './'`slave_config.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fno-strict-aliasing -Wall -I.. -g -O2 -MT libethercat_la-slave_config.lo -MD -MP -MF .deps/libethercat_la-slave_config.Tpo -c slave_config.c  -fPIC -DPIC -o .libs/libethercat_la-slave_config.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fno-strict-aliasing -Wall -I.. -g -O2 -MT libethercat_la-slave_config.lo -MD -MP -MF .deps/libethercat_la-slave_config.Tpo -c slave_config.c -o libethercat_la-slave_config.o >/dev/null 2>&1
+mv -f .deps/libethercat_la-slave_config.Tpo .deps/libethercat_la-slave_config.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -fno-strict-aliasing -Wall -I.. -g -O2 -MT libethercat_la-voe_handler.lo -MD -MP -MF .deps/libethercat_la-voe_handler.Tpo -c -o libethercat_la-voe_handler.lo `test -f 'voe_handler.c' || echo './'`voe_handler.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fno-strict-aliasing -Wall -I.. -g -O2 -MT libethercat_la-voe_handler.lo -MD -MP -MF .deps/libethercat_la-voe_handler.Tpo -c voe_handler.c  -fPIC -DPIC -o .libs/libethercat_la-voe_handler.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fno-strict-aliasing -Wall -I.. -g -O2 -MT libethercat_la-voe_handler.lo -MD -MP -MF .deps/libethercat_la-voe_handler.Tpo -c voe_handler.c -o libethercat_la-voe_handler.o >/dev/null 2>&1
+mv -f .deps/libethercat_la-voe_handler.Tpo .deps/libethercat_la-voe_handler.Plo
+/bin/sh ../libtool  --tag=CC   --mode=link gcc -fno-strict-aliasing -Wall -I.. -g -O2 -version-info 2:0:1  -o libethercat.la -rpath /opt/etherlab/lib libethercat_la-common.lo libethercat_la-domain.lo libethercat_la-master.lo libethercat_la-reg_request.lo libethercat_la-sdo_request.lo libethercat_la-slave_config.lo libethercat_la-voe_handler.lo  
+libtool: link: gcc -shared  -fPIC -DPIC  .libs/libethercat_la-common.o .libs/libethercat_la-domain.o .libs/libethercat_la-master.o .libs/libethercat_la-reg_request.o .libs/libethercat_la-sdo_request.o .libs/libethercat_la-slave_config.o .libs/libethercat_la-voe_handler.o    -O2   -Wl,-soname -Wl,libethercat.so.1 -o .libs/libethercat.so.1.1.0
+libtool: link: (cd ".libs" && rm -f "libethercat.so.1" && ln -s "libethercat.so.1.1.0" "libethercat.so.1")
+libtool: link: (cd ".libs" && rm -f "libethercat.so" && ln -s "libethercat.so.1.1.0" "libethercat.so")
+libtool: link: ar cru .libs/libethercat.a  libethercat_la-common.o libethercat_la-domain.o libethercat_la-master.o libethercat_la-reg_request.o libethercat_la-sdo_request.o libethercat_la-slave_config.o libethercat_la-voe_handler.o
+libtool: link: ranlib .libs/libethercat.a
+libtool: link: ( cd ".libs" && rm -f "libethercat.la" && ln -s "../libethercat.la" "libethercat.la" )
+make[4]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/lib'
+Making all in examples
+make[4]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples'
+make  all-recursive
+make[5]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples'
+Making all in dc_user
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples/dc_user'
+gcc -DHAVE_CONFIG_H -I. -I../..    -I../../include -Wall -g -O2 -MT ec_dc_user_example-main.o -MD -MP -MF .deps/ec_dc_user_example-main.Tpo -c -o ec_dc_user_example-main.o `test -f 'main.c' || echo './'`main.c
+mv -f .deps/ec_dc_user_example-main.Tpo .deps/ec_dc_user_example-main.Po
+/bin/sh ../../libtool  --tag=CC   --mode=link gcc -I../../include -Wall -g -O2 -L../../lib/.libs -lethercat -lrt  -o ec_dc_user_example ec_dc_user_example-main.o  
+libtool: link: gcc -I../../include -Wall -g -O2 -o .libs/ec_dc_user_example ec_dc_user_example-main.o  -L../../lib/.libs /home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/lib/.libs/libethercat.so -lrt -Wl,-rpath -Wl,/opt/etherlab/lib
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples/dc_user'
+Making all in user
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples/user'
+gcc -DHAVE_CONFIG_H -I. -I../..    -I../../include -Wall -g -O2 -MT ec_user_example-main.o -MD -MP -MF .deps/ec_user_example-main.Tpo -c -o ec_user_example-main.o `test -f 'main.c' || echo './'`main.c
+mv -f .deps/ec_user_example-main.Tpo .deps/ec_user_example-main.Po
+/bin/sh ../../libtool  --tag=CC   --mode=link gcc -I../../include -Wall -g -O2 -L../../lib/.libs -lethercat -lrt  -o ec_user_example ec_user_example-main.o  
+libtool: link: gcc -I../../include -Wall -g -O2 -o .libs/ec_user_example ec_user_example-main.o  -L../../lib/.libs /home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/lib/.libs/libethercat.so -lrt -Wl,-rpath -Wl,/opt/etherlab/lib
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples/user'
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples'
+make[6]: Nothing to be done for `all-am'.
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples'
+make[5]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples'
+make[4]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples'
+make[4]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+make[4]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+make[3]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+make[2]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+make[1]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+[anderssandstrom@mcag-ecmc-lenovo-std-01 etherlabmaster]$ 
+[anderssandstrom@mcag-ecmc-lenovo-std-01 etherlabmaster]$ 
+[anderssandstrom@mcag-ecmc-lenovo-std-01 etherlabmaster]$ 
+[anderssandstrom@mcag-ecmc-lenovo-std-01 etherlabmaster]$ 
+[anderssandstrom@mcag-ecmc-lenovo-std-01 etherlabmaster]$ make install
+make[1]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+make
+make[2]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+make  all-recursive
+make[3]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+Making all in include
+make[4]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/include'
+make[4]: Nothing to be done for `all'.
+make[4]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/include'
+Making all in script
+make[4]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script'
+make  all-recursive
+make[5]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script'
+Making all in init.d
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script/init.d'
+make  all-am
+make[7]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script/init.d'
+make[7]: Nothing to be done for `all-am'.
+make[7]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script/init.d'
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script/init.d'
+Making all in sysconfig
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script/sysconfig'
+make[6]: Nothing to be done for `all'.
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script/sysconfig'
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script'
+make[6]: Nothing to be done for `all-am'.
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script'
+make[5]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script'
+make[4]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script'
+Making all in devices
+make[4]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices'
+make  all-recursive
+make[5]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices'
+Making all in ccat
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/ccat'
+make  all-am
+make[7]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/ccat'
+make[7]: Nothing to be done for `all-am'.
+make[7]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/ccat'
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/ccat'
+Making all in e1000
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/e1000'
+make  all-am
+make[7]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/e1000'
+make[7]: Nothing to be done for `all-am'.
+make[7]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/e1000'
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/e1000'
+Making all in e1000e
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/e1000e'
+make  all-am
+make[7]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/e1000e'
+make[7]: Nothing to be done for `all-am'.
+make[7]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/e1000e'
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/e1000e'
+Making all in igb
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/igb'
+make  all-am
+make[7]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/igb'
+make[7]: Nothing to be done for `all-am'.
+make[7]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/igb'
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/igb'
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices'
+make[6]: Nothing to be done for `all-am'.
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices'
+make[5]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices'
+make[4]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices'
+Making all in master
+make[4]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/master'
+make  all-am
+make[5]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/master'
+make[5]: Nothing to be done for `all-am'.
+make[5]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/master'
+make[4]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/master'
+Making all in tool
+make[4]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/tool'
+make[4]: Nothing to be done for `all'.
+make[4]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/tool'
+Making all in lib
+make[4]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/lib'
+make[4]: Nothing to be done for `all'.
+make[4]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/lib'
+Making all in examples
+make[4]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples'
+make  all-recursive
+make[5]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples'
+Making all in dc_user
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples/dc_user'
+make[6]: Nothing to be done for `all'.
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples/dc_user'
+Making all in user
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples/user'
+make[6]: Nothing to be done for `all'.
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples/user'
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples'
+make[6]: Nothing to be done for `all-am'.
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples'
+make[5]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples'
+make[4]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples'
+make[4]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+make[4]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+make[3]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+make[2]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+make install
+make[2]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+make  install-recursive
+make[3]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+Making install in include
+make[4]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/include'
+make[5]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/include'
+make[5]: Nothing to be done for `install-exec-am'.
+ /usr/bin/mkdir -p '/opt/etherlab/include'
+ /usr/bin/install -c -m 644 ecrt.h ectty.h '/opt/etherlab/include'
+make[5]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/include'
+make[4]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/include'
+Making install in script
+make[4]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script'
+make  install-recursive
+make[5]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script'
+Making install in init.d
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script/init.d'
+make  install-am
+make[7]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script/init.d'
+make[8]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script/init.d'
+make[8]: Nothing to be done for `install-exec-am'.
+ /usr/bin/mkdir -p '/opt/etherlab/etc/init.d'
+ /usr/bin/install -c ethercat '/opt/etherlab/etc/init.d'
+make[8]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script/init.d'
+make[7]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script/init.d'
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script/init.d'
+Making install in sysconfig
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script/sysconfig'
+make[7]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script/sysconfig'
+make[7]: Nothing to be done for `install-exec-am'.
+ /usr/bin/mkdir -p '/opt/etherlab/etc/sysconfig'
+ /usr/bin/install -c -m 644 ethercat '/opt/etherlab/etc/sysconfig'
+make[7]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script/sysconfig'
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script/sysconfig'
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script'
+make[7]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script'
+ /usr/bin/mkdir -p '/opt/etherlab/etc'
+ /usr/bin/install -c -m 644 ethercat.conf '/opt/etherlab/etc'
+ /usr/bin/mkdir -p '/opt/etherlab/sbin'
+ /usr/bin/install -c ethercatctl '/opt/etherlab/sbin'
+ /usr/bin/mkdir -p '/opt/etherlab/lib/systemd/system'
+ /usr/bin/install -c -m 644 ethercat.service '/opt/etherlab/lib/systemd/system'
+make[7]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script'
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script'
+make[5]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script'
+make[4]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script'
+Making install in devices
+make[4]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices'
+make  install-recursive
+make[5]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices'
+Making install in ccat
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/ccat'
+make  install-am
+make[7]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/ccat'
+make[8]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/ccat'
+make[8]: Nothing to be done for `install-exec-am'.
+make[8]: Nothing to be done for `install-data-am'.
+make[8]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/ccat'
+make[7]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/ccat'
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/ccat'
+Making install in e1000
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/e1000'
+make  install-am
+make[7]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/e1000'
+make[8]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/e1000'
+make[8]: Nothing to be done for `install-exec-am'.
+make[8]: Nothing to be done for `install-data-am'.
+make[8]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/e1000'
+make[7]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/e1000'
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/e1000'
+Making install in e1000e
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/e1000e'
+make  install-am
+make[7]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/e1000e'
+make[8]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/e1000e'
+make[8]: Nothing to be done for `install-exec-am'.
+make[8]: Nothing to be done for `install-data-am'.
+make[8]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/e1000e'
+make[7]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/e1000e'
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/e1000e'
+Making install in igb
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/igb'
+make  install-am
+make[7]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/igb'
+make[8]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/igb'
+make[8]: Nothing to be done for `install-exec-am'.
+make[8]: Nothing to be done for `install-data-am'.
+make[8]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/igb'
+make[7]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/igb'
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/igb'
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices'
+make[7]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices'
+make[7]: Nothing to be done for `install-exec-am'.
+make[7]: Nothing to be done for `install-data-am'.
+make[7]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices'
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices'
+make[5]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices'
+make[4]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices'
+Making install in master
+make[4]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/master'
+make  install-am
+make[5]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/master'
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/master'
+make[6]: Nothing to be done for `install-exec-am'.
+make[6]: Nothing to be done for `install-data-am'.
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/master'
+make[5]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/master'
+make[4]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/master'
+Making install in tool
+make[4]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/tool'
+make[5]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/tool'
+ /usr/bin/mkdir -p '/opt/etherlab/bin'
+  /bin/sh ../libtool   --mode=install /usr/bin/install -c ethercat '/opt/etherlab/bin'
+libtool: install: /usr/bin/install -c ethercat /opt/etherlab/bin/ethercat
+make[5]: Nothing to be done for `install-data-am'.
+make[5]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/tool'
+make[4]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/tool'
+Making install in lib
+make[4]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/lib'
+make[5]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/lib'
+ /usr/bin/mkdir -p '/opt/etherlab/lib'
+ /bin/sh ../libtool   --mode=install /usr/bin/install -c   libethercat.la '/opt/etherlab/lib'
+libtool: install: /usr/bin/install -c .libs/libethercat.so.1.1.0 /opt/etherlab/lib/libethercat.so.1.1.0
+libtool: install: (cd /opt/etherlab/lib && { ln -s -f libethercat.so.1.1.0 libethercat.so.1 || { rm -f libethercat.so.1 && ln -s libethercat.so.1.1.0 libethercat.so.1; }; })
+libtool: install: (cd /opt/etherlab/lib && { ln -s -f libethercat.so.1.1.0 libethercat.so || { rm -f libethercat.so && ln -s libethercat.so.1.1.0 libethercat.so; }; })
+libtool: install: /usr/bin/install -c .libs/libethercat.lai /opt/etherlab/lib/libethercat.la
+libtool: install: /usr/bin/install -c .libs/libethercat.a /opt/etherlab/lib/libethercat.a
+libtool: install: chmod 644 /opt/etherlab/lib/libethercat.a
+libtool: install: ranlib /opt/etherlab/lib/libethercat.a
+libtool: finish: PATH="/sbin:/bin:/usr/sbin:/usr/bin:/sbin" ldconfig -n /opt/etherlab/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /opt/etherlab/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the `-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the `LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the `LD_RUN_PATH' environment variable
+     during linking
+   - use the `-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to `/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+make[5]: Nothing to be done for `install-data-am'.
+make[5]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/lib'
+make[4]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/lib'
+Making install in examples
+make[4]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples'
+make  install-recursive
+make[5]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples'
+Making install in dc_user
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples/dc_user'
+make[7]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples/dc_user'
+make[7]: Nothing to be done for `install-exec-am'.
+make[7]: Nothing to be done for `install-data-am'.
+make[7]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples/dc_user'
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples/dc_user'
+Making install in user
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples/user'
+make[7]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples/user'
+make[7]: Nothing to be done for `install-exec-am'.
+make[7]: Nothing to be done for `install-data-am'.
+make[7]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples/user'
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples/user'
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples'
+make[7]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples'
+make[7]: Nothing to be done for `install-exec-am'.
+make[7]: Nothing to be done for `install-data-am'.
+make[7]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples'
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples'
+make[5]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples'
+make[4]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples'
+make[4]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+make[5]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+make[5]: Nothing to be done for `install-exec-am'.
+make[5]: Nothing to be done for `install-data-am'.
+make[5]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+make[4]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+make[3]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+make[2]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+make[1]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+[anderssandstrom@mcag-ecmc-lenovo-std-01 etherlabmaster]$ make dkms_add
+make[1]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+/usr/sbin/dkms add -m etherlabmaster -v 1.5.2
+
+Creating symlink /var/lib/dkms/etherlabmaster/1.5.2/source ->
+                 /usr/src/etherlabmaster-1.5.2
+
+DKMS: add completed.
+make[1]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+[anderssandstrom@mcag-ecmc-lenovo-std-01 etherlabmaster]$ make dkms_build
+make[1]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+/usr/sbin/dkms build -m etherlabmaster -v 1.5.2
+
+Kernel preparation unnecessary for this kernel.  Skipping...
+
+Building module:
+cleaning build area...
+make -j3 KERNELRELEASE=3.10.0-1062.12.1.rt56.1042.el7.x86_64 -C /lib/modules/3.10.0-1062.12.1.rt56.1042.el7.x86_64/build M=/var/lib/dkms/etherlabmaster/1.5.2/build modules....
+cleaning build area...
+
+DKMS: build completed.
+make[1]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+[anderssandstrom@mcag-ecmc-lenovo-std-01 etherlabmaster]$ make dkms_install
+make[1]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+/usr/sbin/dkms install -m etherlabmaster -v 1.5.2 --force
+
+ec_master.ko.xz:
+Running module version sanity check.
+ - Original module
+   - No original module exists within this kernel
+ - Installation
+   - Installing to /lib/modules/3.10.0-1062.12.1.rt56.1042.el7.x86_64/extra/
+
+ec_generic.ko.xz:
+Running module version sanity check.
+ - Original module
+   - No original module exists within this kernel
+ - Installation
+   - Installing to /lib/modules/3.10.0-1062.12.1.rt56.1042.el7.x86_64/extra/
+Adding any weak-modules
+
+depmod...
+
+Backing up initramfs-3.10.0-1062.12.1.rt56.1042.el7.x86_64.img to /boot/initramfs-3.10.0-1062.12.1.rt56.1042.el7.x86_64.img.old-dkms
+Making new initramfs-3.10.0-1062.12.1.rt56.1042.el7.x86_64.img
+(If next boot fails, revert to initramfs-3.10.0-1062.12.1.rt56.1042.el7.x86_64.img.old-dkms image)
+dracut........
+
+DKMS: install completed.
+depmod -a
+make[1]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+[anderssandstrom@mcag-ecmc-lenovo-std-01 etherlabmaster]$ make setup
+>>> We've found the local configuration file.
+    The original ETHERCAT_MASTER0 = enp0s25
+    will be overriden with ETHERCAT_MASTER0 = eno4
+
+>>> ---------------------------------------
+ECAT_SYSTEMD_PATH : /opt/etherlab/lib/systemd/system
+ECAT_CONF_PATH    : /opt/etherlab/etc
+ETHERCAT_CONFIG   : /opt/etherlab/etc/ethercat.conf
+>>> Setup the systemd dkms.service in /usr/lib/systemd/system
+
+>>> Set up EtherCAT Master ... 
+    eno4 : 7c:8a:e1:d2:18:29
+>>> Setup the systemd in /usr/lib/systemd/system
+install: ‘/opt/etherlab/lib/systemd/system/ethercat.service’ and ‘/usr/lib/systemd/system/ethercat.service’ are the same file
+Created symlink from /etc/systemd/system/multi-user.target.wants/ethercat.service to /usr/lib/systemd/system/ethercat.service.
+>>> One should run the following command later
+    systemctl start ethercat.service
+
+>>> Put the udev rule : KERNEL=="EtherCAT[0-9]*", SUBSYSTEM=="EtherCAT", MODE="0666" in /etc/udev/rules.d/99-ethercat.rules to be accessible via an user.
+    KERNEL=="EtherCAT[0-9]*", SUBSYSTEM=="EtherCAT", MODE="0666"
+
+>>> Check the /etc/udev/rules.d/99-ethercat.rules with cat
+    KERNEL=="EtherCAT[0-9]*", SUBSYSTEM=="EtherCAT", MODE="0666"
+
+>>> Reload udev rules, and trigger it
+ln: ‘/opt/etherlab/bin/ethercat’ and ‘/usr/bin/ethercat’ are the same file
+    /opt/etherlab/lib
+>>>
+It is mandatory to reboot your system once
+>>>
+[anderssandstrom@mcag-ecmc-lenovo-std-01 etherlabmaster]$ make showopts
+
+>>>>  Configuration Options Variables   <<<<
+
+E3_EHTERLAB_CONF_OPTIONS is defined as the follows:
+
+--enable-generic --disable-8139too --disable-e100 --disable-e1000 --disable-e1000e --disable-igb --disable-r8169 --disable-ccat --enable-static=yes --enable-shared=yes --enable-eoe=no --enable-cycles=yes --enable-hrtimer=no --enable-regalias=no --enable-tool=yes --enable-userlib=yes --enable-sii-assign=yes --enable-rt-syslog=yes
+
+WITH_PATCHSET = NO
+
+WITH_DEV_8139TOO = NO
+WITH_DEV_CCAT = NO
+WITH_DEV_E100 = NO
+WITH_DEV_E1000 = NO
+WITH_DEV_E1000E = NO
+WITH_DEV_GENERIC = YES
+WITH_DEV_IGB = NO
+WITH_DEV_R8169 = NO
+
+ENABLE_CYCLES = YES
+ENABLE_EOE = NO
+ENABLE_HRTIMER = NO
+ENABLE_REGALIAS = NO
+ENABLE_RT_SYSLOG = YES
+ENABLE_SII_ASSIGN = YES
+ENABLE_STATIC = YES
+ENABLE_TOOL = YES
+ENABLE_USERLIB = YES
+[anderssandstrom@mcag-ecmc-lenovo-std-01 etherlabmaster]$ make init
+hg clone http://hg.code.sf.net/p/etherlabmaster/code etherlabmaster-code -r stable-1.5
+adding changesets
+adding manifests
+adding file changes
+added 2304 changesets with 8727 changes to 1651 files
+updating to branch stable-1.5
+1258 files updated, 0 files merged, 0 files removed, 0 files unresolved
+8 files updated, 0 files merged, 0 files removed, 0 files unresolved
+0c011dc6dbc4 2296 stable-1.5
+make patch
+make[1]: Entering directory `/home/anderssandstrom/sources/etherlabmaster'
+
+Patching etherlabmaster-code with the file : /home/anderssandstrom/sources/etherlabmaster/patch/Site/use_prefix_for_ethercat_conf_path.p0.patch
+patching file script/ethercatctl.in
+
+Patching etherlabmaster-code with the file : /home/anderssandstrom/sources/etherlabmaster/patch/Site/after_dkms_service_patch.p0.patch
+patching file script/ethercat.service.in
+make[1]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster'
+[anderssandstrom@mcag-ecmc-lenovo-std-01 etherlabmaster]$ make build
+make[1]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+touch ChangeLog
+autoreconf --force --install -v
+autoreconf: Entering directory `.'
+autoreconf: configure.ac: not using Gettext
+autoreconf: running: aclocal --force -I m4
+autoreconf: configure.ac: tracing
+autoreconf: configure.ac: creating directory autoconf
+autoreconf: running: libtoolize --copy --force
+libtoolize: putting auxiliary files in AC_CONFIG_AUX_DIR, `autoconf'.
+libtoolize: copying file `autoconf/ltmain.sh'
+libtoolize: putting macros in AC_CONFIG_MACRO_DIR, `m4'.
+libtoolize: copying file `m4/libtool.m4'
+libtoolize: copying file `m4/ltoptions.m4'
+libtoolize: copying file `m4/ltsugar.m4'
+libtoolize: copying file `m4/ltversion.m4'
+libtoolize: copying file `m4/lt~obsolete.m4'
+autoreconf: running: /usr/bin/autoconf --force
+autoreconf: running: /usr/bin/autoheader --force
+autoreconf: running: automake --add-missing --copy --force-missing
+configure.ac:54: installing 'autoconf/ar-lib'
+configure.ac:53: installing 'autoconf/compile'
+configure.ac:56: installing 'autoconf/config.guess'
+configure.ac:56: installing 'autoconf/config.sub'
+configure.ac:44: installing 'autoconf/install-sh'
+configure.ac:44: installing 'autoconf/missing'
+examples/dc_user/Makefile.am: installing 'autoconf/depcomp'
+autoreconf: Leaving directory `.'
+./configure --enable-generic --disable-8139too --disable-e100 --disable-e1000 --disable-e1000e --disable-igb --disable-r8169 --disable-ccat --enable-static=yes --enable-shared=yes --enable-eoe=no --enable-cycles=yes --enable-hrtimer=no --enable-regalias=no --enable-tool=yes --enable-userlib=yes --enable-sii-assign=yes --enable-rt-syslog=yes --prefix=/opt/etherlab
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking for style of include used by make... GNU
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking dependency style of gcc... gcc3
+checking whether gcc and cc understand -c and -o together... yes
+checking for ar... ar
+checking the archiver (ar) interface... ar
+checking for g++... g++
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ accepts -g... yes
+checking dependency style of g++... gcc3
+checking build system type... x86_64-unknown-linux-gnu
+checking host system type... x86_64-unknown-linux-gnu
+checking how to print strings... printf
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for fgrep... /usr/bin/grep -F
+checking for ld used by gcc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking whether the shell understands some XSI constructs... yes
+checking whether the shell understands "+="... yes
+checking how to convert x86_64-unknown-linux-gnu file names to x86_64-unknown-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-unknown-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+checking for sysroot... no
+checking for mt... no
+checking if : is a manifest tool... no
+checking how to run the C preprocessor... gcc -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... no
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking how to run the C++ preprocessor... g++ -E
+checking for ld used by g++... /usr/bin/ld -m elf_x86_64
+checking if the linker (/usr/bin/ld -m elf_x86_64) is GNU ld... yes
+checking whether the g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking for g++ option to produce PIC... -fPIC -DPIC
+checking if g++ PIC flag -fPIC -DPIC works... yes
+checking if g++ static flag -static works... no
+checking if g++ supports -c -o file.o... yes
+checking if g++ supports -c -o file.o... (cached) yes
+checking whether the g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking dynamic linker characteristics... (cached) GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether to build kernel modules... yes
+checking for Linux kernel sources... /usr/src/kernels/3.10.0-1062.12.1.rt56.1042.el7.x86_64 (Kernel 3.10)
+checking for Linux modules installation directory... ethercat
+checking whether to build the CCAT driver... no
+checking for RTAI path... not specified.
+checking for Xenomai path... not specified.
+checking whether to build RTDM interface... no
+checking whether to build the debug interface... no
+checking whether to build the debug ring... no
+checking whether to build with EoE support... no
+checking whether to use the CPU timestamp counter... yes
+checking whether to use high-resolution timers for scheduling... no
+checking whether to read alias addresses from registers... no
+checking whether to build the command-line tool... yes
+checking whether to build the userspace library... yes
+checking whether to build the tty driver... no
+checking whether to allow identification wildcards... no
+checking for number of Ethernet devices... 1 (Redundancy disabled)
+checking whether to assign the SII to PDI... yes
+checking whether to syslog in realtime context... yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Doxyfile
+config.status: creating Kbuild
+config.status: creating Makefile
+config.status: creating devices/Kbuild
+config.status: creating devices/Makefile
+config.status: creating devices/ccat/Kbuild
+config.status: creating devices/ccat/Makefile
+config.status: creating devices/e1000/Kbuild
+config.status: creating devices/e1000/Makefile
+config.status: creating devices/e1000e/Kbuild
+config.status: creating devices/e1000e/Makefile
+config.status: creating devices/igb/Kbuild
+config.status: creating devices/igb/Makefile
+config.status: creating ethercat.spec
+config.status: creating examples/Kbuild
+config.status: creating examples/Makefile
+config.status: creating examples/dc_rtai/Kbuild
+config.status: creating examples/dc_rtai/Makefile
+config.status: creating examples/dc_user/Makefile
+config.status: creating examples/mini/Kbuild
+config.status: creating examples/mini/Makefile
+config.status: creating examples/rtai/Kbuild
+config.status: creating examples/rtai/Makefile
+config.status: creating examples/rtai_rtdm/Makefile
+config.status: creating examples/rtai_rtdm_dc/Makefile
+config.status: creating examples/tty/Kbuild
+config.status: creating examples/tty/Makefile
+config.status: creating examples/user/Makefile
+config.status: creating examples/xenomai/Makefile
+config.status: creating examples/xenomai_posix/Makefile
+config.status: creating include/Makefile
+config.status: creating lib/Makefile
+config.status: creating m4/Makefile
+config.status: creating master/Kbuild
+config.status: creating master/Makefile
+config.status: creating script/Makefile
+config.status: creating script/ethercat.service
+config.status: creating script/ethercatctl
+config.status: creating script/init.d/Makefile
+config.status: creating script/init.d/ethercat
+config.status: creating script/sysconfig/Makefile
+config.status: creating tool/Makefile
+config.status: creating tty/Kbuild
+config.status: creating tty/Makefile
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+make[1]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+make[1]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+make
+make[2]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+make  all-recursive
+make[3]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+Making all in include
+make[4]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/include'
+make[4]: Nothing to be done for `all'.
+make[4]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/include'
+Making all in script
+make[4]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script'
+make  all-recursive
+make[5]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script'
+Making all in init.d
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script/init.d'
+make  all-am
+make[7]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script/init.d'
+make[7]: Nothing to be done for `all-am'.
+make[7]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script/init.d'
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script/init.d'
+Making all in sysconfig
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script/sysconfig'
+make[6]: Nothing to be done for `all'.
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script/sysconfig'
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script'
+make[6]: Nothing to be done for `all-am'.
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script'
+make[5]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script'
+make[4]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script'
+Making all in devices
+make[4]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices'
+make  all-recursive
+make[5]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices'
+Making all in ccat
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/ccat'
+make  all-am
+make[7]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/ccat'
+make[7]: Nothing to be done for `all-am'.
+make[7]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/ccat'
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/ccat'
+Making all in e1000
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/e1000'
+make  all-am
+make[7]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/e1000'
+make[7]: Nothing to be done for `all-am'.
+make[7]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/e1000'
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/e1000'
+Making all in e1000e
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/e1000e'
+make  all-am
+make[7]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/e1000e'
+make[7]: Nothing to be done for `all-am'.
+make[7]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/e1000e'
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/e1000e'
+Making all in igb
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/igb'
+make  all-am
+make[7]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/igb'
+make[7]: Nothing to be done for `all-am'.
+make[7]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/igb'
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/igb'
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices'
+make[6]: Nothing to be done for `all-am'.
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices'
+make[5]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices'
+make[4]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices'
+Making all in master
+make[4]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/master'
+make  all-am
+make[5]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/master'
+make[5]: Nothing to be done for `all-am'.
+make[5]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/master'
+make[4]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/master'
+Making all in tool
+make[4]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/tool'
+depbase=`echo ../master/soe_errors.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -DHAVE_CONFIG_H -I. -I..     -g -O2 -MT ../master/soe_errors.o -MD -MP -MF $depbase.Tpo -c -o ../master/soe_errors.o ../master/soe_errors.c &&\
+mv -f $depbase.Tpo $depbase.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-Command.o -MD -MP -MF .deps/ethercat-Command.Tpo -c -o ethercat-Command.o `test -f 'Command.cpp' || echo './'`Command.cpp
+mv -f .deps/ethercat-Command.Tpo .deps/ethercat-Command.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-CommandAlias.o -MD -MP -MF .deps/ethercat-CommandAlias.Tpo -c -o ethercat-CommandAlias.o `test -f 'CommandAlias.cpp' || echo './'`CommandAlias.cpp
+mv -f .deps/ethercat-CommandAlias.Tpo .deps/ethercat-CommandAlias.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-CommandCrc.o -MD -MP -MF .deps/ethercat-CommandCrc.Tpo -c -o ethercat-CommandCrc.o `test -f 'CommandCrc.cpp' || echo './'`CommandCrc.cpp
+mv -f .deps/ethercat-CommandCrc.Tpo .deps/ethercat-CommandCrc.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-CommandCStruct.o -MD -MP -MF .deps/ethercat-CommandCStruct.Tpo -c -o ethercat-CommandCStruct.o `test -f 'CommandCStruct.cpp' || echo './'`CommandCStruct.cpp
+mv -f .deps/ethercat-CommandCStruct.Tpo .deps/ethercat-CommandCStruct.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-CommandConfig.o -MD -MP -MF .deps/ethercat-CommandConfig.Tpo -c -o ethercat-CommandConfig.o `test -f 'CommandConfig.cpp' || echo './'`CommandConfig.cpp
+mv -f .deps/ethercat-CommandConfig.Tpo .deps/ethercat-CommandConfig.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-CommandData.o -MD -MP -MF .deps/ethercat-CommandData.Tpo -c -o ethercat-CommandData.o `test -f 'CommandData.cpp' || echo './'`CommandData.cpp
+mv -f .deps/ethercat-CommandData.Tpo .deps/ethercat-CommandData.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-CommandDebug.o -MD -MP -MF .deps/ethercat-CommandDebug.Tpo -c -o ethercat-CommandDebug.o `test -f 'CommandDebug.cpp' || echo './'`CommandDebug.cpp
+mv -f .deps/ethercat-CommandDebug.Tpo .deps/ethercat-CommandDebug.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-CommandDomains.o -MD -MP -MF .deps/ethercat-CommandDomains.Tpo -c -o ethercat-CommandDomains.o `test -f 'CommandDomains.cpp' || echo './'`CommandDomains.cpp
+mv -f .deps/ethercat-CommandDomains.Tpo .deps/ethercat-CommandDomains.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-CommandDownload.o -MD -MP -MF .deps/ethercat-CommandDownload.Tpo -c -o ethercat-CommandDownload.o `test -f 'CommandDownload.cpp' || echo './'`CommandDownload.cpp
+mv -f .deps/ethercat-CommandDownload.Tpo .deps/ethercat-CommandDownload.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-CommandFoeRead.o -MD -MP -MF .deps/ethercat-CommandFoeRead.Tpo -c -o ethercat-CommandFoeRead.o `test -f 'CommandFoeRead.cpp' || echo './'`CommandFoeRead.cpp
+mv -f .deps/ethercat-CommandFoeRead.Tpo .deps/ethercat-CommandFoeRead.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-CommandFoeWrite.o -MD -MP -MF .deps/ethercat-CommandFoeWrite.Tpo -c -o ethercat-CommandFoeWrite.o `test -f 'CommandFoeWrite.cpp' || echo './'`CommandFoeWrite.cpp
+mv -f .deps/ethercat-CommandFoeWrite.Tpo .deps/ethercat-CommandFoeWrite.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-CommandGraph.o -MD -MP -MF .deps/ethercat-CommandGraph.Tpo -c -o ethercat-CommandGraph.o `test -f 'CommandGraph.cpp' || echo './'`CommandGraph.cpp
+mv -f .deps/ethercat-CommandGraph.Tpo .deps/ethercat-CommandGraph.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-CommandMaster.o -MD -MP -MF .deps/ethercat-CommandMaster.Tpo -c -o ethercat-CommandMaster.o `test -f 'CommandMaster.cpp' || echo './'`CommandMaster.cpp
+mv -f .deps/ethercat-CommandMaster.Tpo .deps/ethercat-CommandMaster.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-CommandPdos.o -MD -MP -MF .deps/ethercat-CommandPdos.Tpo -c -o ethercat-CommandPdos.o `test -f 'CommandPdos.cpp' || echo './'`CommandPdos.cpp
+mv -f .deps/ethercat-CommandPdos.Tpo .deps/ethercat-CommandPdos.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-CommandRegRead.o -MD -MP -MF .deps/ethercat-CommandRegRead.Tpo -c -o ethercat-CommandRegRead.o `test -f 'CommandRegRead.cpp' || echo './'`CommandRegRead.cpp
+mv -f .deps/ethercat-CommandRegRead.Tpo .deps/ethercat-CommandRegRead.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-CommandRegWrite.o -MD -MP -MF .deps/ethercat-CommandRegWrite.Tpo -c -o ethercat-CommandRegWrite.o `test -f 'CommandRegWrite.cpp' || echo './'`CommandRegWrite.cpp
+mv -f .deps/ethercat-CommandRegWrite.Tpo .deps/ethercat-CommandRegWrite.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-CommandRescan.o -MD -MP -MF .deps/ethercat-CommandRescan.Tpo -c -o ethercat-CommandRescan.o `test -f 'CommandRescan.cpp' || echo './'`CommandRescan.cpp
+mv -f .deps/ethercat-CommandRescan.Tpo .deps/ethercat-CommandRescan.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-CommandSdos.o -MD -MP -MF .deps/ethercat-CommandSdos.Tpo -c -o ethercat-CommandSdos.o `test -f 'CommandSdos.cpp' || echo './'`CommandSdos.cpp
+mv -f .deps/ethercat-CommandSdos.Tpo .deps/ethercat-CommandSdos.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-CommandSiiRead.o -MD -MP -MF .deps/ethercat-CommandSiiRead.Tpo -c -o ethercat-CommandSiiRead.o `test -f 'CommandSiiRead.cpp' || echo './'`CommandSiiRead.cpp
+mv -f .deps/ethercat-CommandSiiRead.Tpo .deps/ethercat-CommandSiiRead.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-CommandSiiWrite.o -MD -MP -MF .deps/ethercat-CommandSiiWrite.Tpo -c -o ethercat-CommandSiiWrite.o `test -f 'CommandSiiWrite.cpp' || echo './'`CommandSiiWrite.cpp
+mv -f .deps/ethercat-CommandSiiWrite.Tpo .deps/ethercat-CommandSiiWrite.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-CommandSlaves.o -MD -MP -MF .deps/ethercat-CommandSlaves.Tpo -c -o ethercat-CommandSlaves.o `test -f 'CommandSlaves.cpp' || echo './'`CommandSlaves.cpp
+mv -f .deps/ethercat-CommandSlaves.Tpo .deps/ethercat-CommandSlaves.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-CommandSoeRead.o -MD -MP -MF .deps/ethercat-CommandSoeRead.Tpo -c -o ethercat-CommandSoeRead.o `test -f 'CommandSoeRead.cpp' || echo './'`CommandSoeRead.cpp
+mv -f .deps/ethercat-CommandSoeRead.Tpo .deps/ethercat-CommandSoeRead.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-CommandSoeWrite.o -MD -MP -MF .deps/ethercat-CommandSoeWrite.Tpo -c -o ethercat-CommandSoeWrite.o `test -f 'CommandSoeWrite.cpp' || echo './'`CommandSoeWrite.cpp
+mv -f .deps/ethercat-CommandSoeWrite.Tpo .deps/ethercat-CommandSoeWrite.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-CommandStates.o -MD -MP -MF .deps/ethercat-CommandStates.Tpo -c -o ethercat-CommandStates.o `test -f 'CommandStates.cpp' || echo './'`CommandStates.cpp
+mv -f .deps/ethercat-CommandStates.Tpo .deps/ethercat-CommandStates.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-CommandUpload.o -MD -MP -MF .deps/ethercat-CommandUpload.Tpo -c -o ethercat-CommandUpload.o `test -f 'CommandUpload.cpp' || echo './'`CommandUpload.cpp
+mv -f .deps/ethercat-CommandUpload.Tpo .deps/ethercat-CommandUpload.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-CommandVersion.o -MD -MP -MF .deps/ethercat-CommandVersion.Tpo -c -o ethercat-CommandVersion.o `test -f 'CommandVersion.cpp' || echo './'`CommandVersion.cpp
+mv -f .deps/ethercat-CommandVersion.Tpo .deps/ethercat-CommandVersion.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-CommandXml.o -MD -MP -MF .deps/ethercat-CommandXml.Tpo -c -o ethercat-CommandXml.o `test -f 'CommandXml.cpp' || echo './'`CommandXml.cpp
+mv -f .deps/ethercat-CommandXml.Tpo .deps/ethercat-CommandXml.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-DataTypeHandler.o -MD -MP -MF .deps/ethercat-DataTypeHandler.Tpo -c -o ethercat-DataTypeHandler.o `test -f 'DataTypeHandler.cpp' || echo './'`DataTypeHandler.cpp
+mv -f .deps/ethercat-DataTypeHandler.Tpo .deps/ethercat-DataTypeHandler.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-FoeCommand.o -MD -MP -MF .deps/ethercat-FoeCommand.Tpo -c -o ethercat-FoeCommand.o `test -f 'FoeCommand.cpp' || echo './'`FoeCommand.cpp
+mv -f .deps/ethercat-FoeCommand.Tpo .deps/ethercat-FoeCommand.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-MasterDevice.o -MD -MP -MF .deps/ethercat-MasterDevice.Tpo -c -o ethercat-MasterDevice.o `test -f 'MasterDevice.cpp' || echo './'`MasterDevice.cpp
+mv -f .deps/ethercat-MasterDevice.Tpo .deps/ethercat-MasterDevice.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-NumberListParser.o -MD -MP -MF .deps/ethercat-NumberListParser.Tpo -c -o ethercat-NumberListParser.o `test -f 'NumberListParser.cpp' || echo './'`NumberListParser.cpp
+mv -f .deps/ethercat-NumberListParser.Tpo .deps/ethercat-NumberListParser.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-SdoCommand.o -MD -MP -MF .deps/ethercat-SdoCommand.Tpo -c -o ethercat-SdoCommand.o `test -f 'SdoCommand.cpp' || echo './'`SdoCommand.cpp
+mv -f .deps/ethercat-SdoCommand.Tpo .deps/ethercat-SdoCommand.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-SoeCommand.o -MD -MP -MF .deps/ethercat-SoeCommand.Tpo -c -o ethercat-SoeCommand.o `test -f 'SoeCommand.cpp' || echo './'`SoeCommand.cpp
+mv -f .deps/ethercat-SoeCommand.Tpo .deps/ethercat-SoeCommand.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-main.o -MD -MP -MF .deps/ethercat-main.Tpo -c -o ethercat-main.o `test -f 'main.cpp' || echo './'`main.cpp
+mv -f .deps/ethercat-main.Tpo .deps/ethercat-main.Po
+g++ -DHAVE_CONFIG_H -I. -I..    -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2 -MT ethercat-sii_crc.o -MD -MP -MF .deps/ethercat-sii_crc.Tpo -c -o ethercat-sii_crc.o `test -f 'sii_crc.cpp' || echo './'`sii_crc.cpp
+mv -f .deps/ethercat-sii_crc.Tpo .deps/ethercat-sii_crc.Po
+/bin/sh ../libtool  --tag=CXX   --mode=link g++ -I../include -I../master -Wall -DREV=`if test -s ../revision; then cat ../revision; else hg id -i .. 2>/dev/null || echo "unknown"; fi` -fno-strict-aliasing -g -O2   -o ethercat ../master/soe_errors.o ethercat-Command.o ethercat-CommandAlias.o ethercat-CommandCrc.o ethercat-CommandCStruct.o ethercat-CommandConfig.o ethercat-CommandData.o ethercat-CommandDebug.o ethercat-CommandDomains.o ethercat-CommandDownload.o ethercat-CommandFoeRead.o ethercat-CommandFoeWrite.o ethercat-CommandGraph.o ethercat-CommandMaster.o ethercat-CommandPdos.o ethercat-CommandRegRead.o ethercat-CommandRegWrite.o ethercat-CommandRescan.o ethercat-CommandSdos.o ethercat-CommandSiiRead.o ethercat-CommandSiiWrite.o ethercat-CommandSlaves.o ethercat-CommandSoeRead.o ethercat-CommandSoeWrite.o ethercat-CommandStates.o ethercat-CommandUpload.o ethercat-CommandVersion.o ethercat-CommandXml.o ethercat-DataTypeHandler.o ethercat-FoeCommand.o ethercat-MasterDevice.o ethercat-NumberListParser.o ethercat-SdoCommand.o ethercat-SoeCommand.o ethercat-main.o ethercat-sii_crc.o   
+libtool: link: g++ -I../include -I../master -Wall -DREV=0c011dc6dbc4+ -fno-strict-aliasing -g -O2 -o ethercat ../master/soe_errors.o ethercat-Command.o ethercat-CommandAlias.o ethercat-CommandCrc.o ethercat-CommandCStruct.o ethercat-CommandConfig.o ethercat-CommandData.o ethercat-CommandDebug.o ethercat-CommandDomains.o ethercat-CommandDownload.o ethercat-CommandFoeRead.o ethercat-CommandFoeWrite.o ethercat-CommandGraph.o ethercat-CommandMaster.o ethercat-CommandPdos.o ethercat-CommandRegRead.o ethercat-CommandRegWrite.o ethercat-CommandRescan.o ethercat-CommandSdos.o ethercat-CommandSiiRead.o ethercat-CommandSiiWrite.o ethercat-CommandSlaves.o ethercat-CommandSoeRead.o ethercat-CommandSoeWrite.o ethercat-CommandStates.o ethercat-CommandUpload.o ethercat-CommandVersion.o ethercat-CommandXml.o ethercat-DataTypeHandler.o ethercat-FoeCommand.o ethercat-MasterDevice.o ethercat-NumberListParser.o ethercat-SdoCommand.o ethercat-SoeCommand.o ethercat-main.o ethercat-sii_crc.o 
+make[4]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/tool'
+Making all in lib
+make[4]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/lib'
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -fno-strict-aliasing -Wall -I.. -g -O2 -MT libethercat_la-common.lo -MD -MP -MF .deps/libethercat_la-common.Tpo -c -o libethercat_la-common.lo `test -f 'common.c' || echo './'`common.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fno-strict-aliasing -Wall -I.. -g -O2 -MT libethercat_la-common.lo -MD -MP -MF .deps/libethercat_la-common.Tpo -c common.c  -fPIC -DPIC -o .libs/libethercat_la-common.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fno-strict-aliasing -Wall -I.. -g -O2 -MT libethercat_la-common.lo -MD -MP -MF .deps/libethercat_la-common.Tpo -c common.c -o libethercat_la-common.o >/dev/null 2>&1
+mv -f .deps/libethercat_la-common.Tpo .deps/libethercat_la-common.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -fno-strict-aliasing -Wall -I.. -g -O2 -MT libethercat_la-domain.lo -MD -MP -MF .deps/libethercat_la-domain.Tpo -c -o libethercat_la-domain.lo `test -f 'domain.c' || echo './'`domain.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fno-strict-aliasing -Wall -I.. -g -O2 -MT libethercat_la-domain.lo -MD -MP -MF .deps/libethercat_la-domain.Tpo -c domain.c  -fPIC -DPIC -o .libs/libethercat_la-domain.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fno-strict-aliasing -Wall -I.. -g -O2 -MT libethercat_la-domain.lo -MD -MP -MF .deps/libethercat_la-domain.Tpo -c domain.c -o libethercat_la-domain.o >/dev/null 2>&1
+mv -f .deps/libethercat_la-domain.Tpo .deps/libethercat_la-domain.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -fno-strict-aliasing -Wall -I.. -g -O2 -MT libethercat_la-master.lo -MD -MP -MF .deps/libethercat_la-master.Tpo -c -o libethercat_la-master.lo `test -f 'master.c' || echo './'`master.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fno-strict-aliasing -Wall -I.. -g -O2 -MT libethercat_la-master.lo -MD -MP -MF .deps/libethercat_la-master.Tpo -c master.c  -fPIC -DPIC -o .libs/libethercat_la-master.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fno-strict-aliasing -Wall -I.. -g -O2 -MT libethercat_la-master.lo -MD -MP -MF .deps/libethercat_la-master.Tpo -c master.c -o libethercat_la-master.o >/dev/null 2>&1
+mv -f .deps/libethercat_la-master.Tpo .deps/libethercat_la-master.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -fno-strict-aliasing -Wall -I.. -g -O2 -MT libethercat_la-reg_request.lo -MD -MP -MF .deps/libethercat_la-reg_request.Tpo -c -o libethercat_la-reg_request.lo `test -f 'reg_request.c' || echo './'`reg_request.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fno-strict-aliasing -Wall -I.. -g -O2 -MT libethercat_la-reg_request.lo -MD -MP -MF .deps/libethercat_la-reg_request.Tpo -c reg_request.c  -fPIC -DPIC -o .libs/libethercat_la-reg_request.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fno-strict-aliasing -Wall -I.. -g -O2 -MT libethercat_la-reg_request.lo -MD -MP -MF .deps/libethercat_la-reg_request.Tpo -c reg_request.c -o libethercat_la-reg_request.o >/dev/null 2>&1
+mv -f .deps/libethercat_la-reg_request.Tpo .deps/libethercat_la-reg_request.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -fno-strict-aliasing -Wall -I.. -g -O2 -MT libethercat_la-sdo_request.lo -MD -MP -MF .deps/libethercat_la-sdo_request.Tpo -c -o libethercat_la-sdo_request.lo `test -f 'sdo_request.c' || echo './'`sdo_request.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fno-strict-aliasing -Wall -I.. -g -O2 -MT libethercat_la-sdo_request.lo -MD -MP -MF .deps/libethercat_la-sdo_request.Tpo -c sdo_request.c  -fPIC -DPIC -o .libs/libethercat_la-sdo_request.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fno-strict-aliasing -Wall -I.. -g -O2 -MT libethercat_la-sdo_request.lo -MD -MP -MF .deps/libethercat_la-sdo_request.Tpo -c sdo_request.c -o libethercat_la-sdo_request.o >/dev/null 2>&1
+mv -f .deps/libethercat_la-sdo_request.Tpo .deps/libethercat_la-sdo_request.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -fno-strict-aliasing -Wall -I.. -g -O2 -MT libethercat_la-slave_config.lo -MD -MP -MF .deps/libethercat_la-slave_config.Tpo -c -o libethercat_la-slave_config.lo `test -f 'slave_config.c' || echo './'`slave_config.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fno-strict-aliasing -Wall -I.. -g -O2 -MT libethercat_la-slave_config.lo -MD -MP -MF .deps/libethercat_la-slave_config.Tpo -c slave_config.c  -fPIC -DPIC -o .libs/libethercat_la-slave_config.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fno-strict-aliasing -Wall -I.. -g -O2 -MT libethercat_la-slave_config.lo -MD -MP -MF .deps/libethercat_la-slave_config.Tpo -c slave_config.c -o libethercat_la-slave_config.o >/dev/null 2>&1
+mv -f .deps/libethercat_la-slave_config.Tpo .deps/libethercat_la-slave_config.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..    -fno-strict-aliasing -Wall -I.. -g -O2 -MT libethercat_la-voe_handler.lo -MD -MP -MF .deps/libethercat_la-voe_handler.Tpo -c -o libethercat_la-voe_handler.lo `test -f 'voe_handler.c' || echo './'`voe_handler.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fno-strict-aliasing -Wall -I.. -g -O2 -MT libethercat_la-voe_handler.lo -MD -MP -MF .deps/libethercat_la-voe_handler.Tpo -c voe_handler.c  -fPIC -DPIC -o .libs/libethercat_la-voe_handler.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fno-strict-aliasing -Wall -I.. -g -O2 -MT libethercat_la-voe_handler.lo -MD -MP -MF .deps/libethercat_la-voe_handler.Tpo -c voe_handler.c -o libethercat_la-voe_handler.o >/dev/null 2>&1
+mv -f .deps/libethercat_la-voe_handler.Tpo .deps/libethercat_la-voe_handler.Plo
+/bin/sh ../libtool  --tag=CC   --mode=link gcc -fno-strict-aliasing -Wall -I.. -g -O2 -version-info 2:0:1  -o libethercat.la -rpath /opt/etherlab/lib libethercat_la-common.lo libethercat_la-domain.lo libethercat_la-master.lo libethercat_la-reg_request.lo libethercat_la-sdo_request.lo libethercat_la-slave_config.lo libethercat_la-voe_handler.lo  
+libtool: link: gcc -shared  -fPIC -DPIC  .libs/libethercat_la-common.o .libs/libethercat_la-domain.o .libs/libethercat_la-master.o .libs/libethercat_la-reg_request.o .libs/libethercat_la-sdo_request.o .libs/libethercat_la-slave_config.o .libs/libethercat_la-voe_handler.o    -O2   -Wl,-soname -Wl,libethercat.so.1 -o .libs/libethercat.so.1.1.0
+libtool: link: (cd ".libs" && rm -f "libethercat.so.1" && ln -s "libethercat.so.1.1.0" "libethercat.so.1")
+libtool: link: (cd ".libs" && rm -f "libethercat.so" && ln -s "libethercat.so.1.1.0" "libethercat.so")
+libtool: link: ar cru .libs/libethercat.a  libethercat_la-common.o libethercat_la-domain.o libethercat_la-master.o libethercat_la-reg_request.o libethercat_la-sdo_request.o libethercat_la-slave_config.o libethercat_la-voe_handler.o
+libtool: link: ranlib .libs/libethercat.a
+libtool: link: ( cd ".libs" && rm -f "libethercat.la" && ln -s "../libethercat.la" "libethercat.la" )
+make[4]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/lib'
+Making all in examples
+make[4]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples'
+make  all-recursive
+make[5]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples'
+Making all in dc_user
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples/dc_user'
+gcc -DHAVE_CONFIG_H -I. -I../..    -I../../include -Wall -g -O2 -MT ec_dc_user_example-main.o -MD -MP -MF .deps/ec_dc_user_example-main.Tpo -c -o ec_dc_user_example-main.o `test -f 'main.c' || echo './'`main.c
+mv -f .deps/ec_dc_user_example-main.Tpo .deps/ec_dc_user_example-main.Po
+/bin/sh ../../libtool  --tag=CC   --mode=link gcc -I../../include -Wall -g -O2 -L../../lib/.libs -lethercat -lrt  -o ec_dc_user_example ec_dc_user_example-main.o  
+libtool: link: gcc -I../../include -Wall -g -O2 -o .libs/ec_dc_user_example ec_dc_user_example-main.o  -L../../lib/.libs /home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/lib/.libs/libethercat.so -lrt -Wl,-rpath -Wl,/opt/etherlab/lib
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples/dc_user'
+Making all in user
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples/user'
+gcc -DHAVE_CONFIG_H -I. -I../..    -I../../include -Wall -g -O2 -MT ec_user_example-main.o -MD -MP -MF .deps/ec_user_example-main.Tpo -c -o ec_user_example-main.o `test -f 'main.c' || echo './'`main.c
+mv -f .deps/ec_user_example-main.Tpo .deps/ec_user_example-main.Po
+/bin/sh ../../libtool  --tag=CC   --mode=link gcc -I../../include -Wall -g -O2 -L../../lib/.libs -lethercat -lrt  -o ec_user_example ec_user_example-main.o  
+libtool: link: gcc -I../../include -Wall -g -O2 -o .libs/ec_user_example ec_user_example-main.o  -L../../lib/.libs /home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/lib/.libs/libethercat.so -lrt -Wl,-rpath -Wl,/opt/etherlab/lib
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples/user'
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples'
+make[6]: Nothing to be done for `all-am'.
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples'
+make[5]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples'
+make[4]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples'
+make[4]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+make[4]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+make[3]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+make[2]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+make[1]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+[anderssandstrom@mcag-ecmc-lenovo-std-01 etherlabmaster]$ 
+[anderssandstrom@mcag-ecmc-lenovo-std-01 etherlabmaster]$ 
+[anderssandstrom@mcag-ecmc-lenovo-std-01 etherlabmaster]$ 
+[anderssandstrom@mcag-ecmc-lenovo-std-01 etherlabmaster]$ 
+[anderssandstrom@mcag-ecmc-lenovo-std-01 etherlabmaster]$ make install
+make[1]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+make
+make[2]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+make  all-recursive
+make[3]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+Making all in include
+make[4]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/include'
+make[4]: Nothing to be done for `all'.
+make[4]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/include'
+Making all in script
+make[4]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script'
+make  all-recursive
+make[5]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script'
+Making all in init.d
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script/init.d'
+make  all-am
+make[7]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script/init.d'
+make[7]: Nothing to be done for `all-am'.
+make[7]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script/init.d'
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script/init.d'
+Making all in sysconfig
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script/sysconfig'
+make[6]: Nothing to be done for `all'.
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script/sysconfig'
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script'
+make[6]: Nothing to be done for `all-am'.
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script'
+make[5]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script'
+make[4]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script'
+Making all in devices
+make[4]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices'
+make  all-recursive
+make[5]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices'
+Making all in ccat
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/ccat'
+make  all-am
+make[7]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/ccat'
+make[7]: Nothing to be done for `all-am'.
+make[7]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/ccat'
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/ccat'
+Making all in e1000
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/e1000'
+make  all-am
+make[7]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/e1000'
+make[7]: Nothing to be done for `all-am'.
+make[7]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/e1000'
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/e1000'
+Making all in e1000e
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/e1000e'
+make  all-am
+make[7]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/e1000e'
+make[7]: Nothing to be done for `all-am'.
+make[7]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/e1000e'
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/e1000e'
+Making all in igb
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/igb'
+make  all-am
+make[7]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/igb'
+make[7]: Nothing to be done for `all-am'.
+make[7]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/igb'
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/igb'
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices'
+make[6]: Nothing to be done for `all-am'.
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices'
+make[5]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices'
+make[4]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices'
+Making all in master
+make[4]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/master'
+make  all-am
+make[5]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/master'
+make[5]: Nothing to be done for `all-am'.
+make[5]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/master'
+make[4]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/master'
+Making all in tool
+make[4]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/tool'
+make[4]: Nothing to be done for `all'.
+make[4]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/tool'
+Making all in lib
+make[4]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/lib'
+make[4]: Nothing to be done for `all'.
+make[4]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/lib'
+Making all in examples
+make[4]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples'
+make  all-recursive
+make[5]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples'
+Making all in dc_user
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples/dc_user'
+make[6]: Nothing to be done for `all'.
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples/dc_user'
+Making all in user
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples/user'
+make[6]: Nothing to be done for `all'.
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples/user'
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples'
+make[6]: Nothing to be done for `all-am'.
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples'
+make[5]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples'
+make[4]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples'
+make[4]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+make[4]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+make[3]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+make[2]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+make install
+make[2]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+make  install-recursive
+make[3]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+Making install in include
+make[4]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/include'
+make[5]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/include'
+make[5]: Nothing to be done for `install-exec-am'.
+ /usr/bin/mkdir -p '/opt/etherlab/include'
+ /usr/bin/install -c -m 644 ecrt.h ectty.h '/opt/etherlab/include'
+make[5]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/include'
+make[4]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/include'
+Making install in script
+make[4]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script'
+make  install-recursive
+make[5]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script'
+Making install in init.d
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script/init.d'
+make  install-am
+make[7]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script/init.d'
+make[8]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script/init.d'
+make[8]: Nothing to be done for `install-exec-am'.
+ /usr/bin/mkdir -p '/opt/etherlab/etc/init.d'
+ /usr/bin/install -c ethercat '/opt/etherlab/etc/init.d'
+make[8]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script/init.d'
+make[7]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script/init.d'
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script/init.d'
+Making install in sysconfig
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script/sysconfig'
+make[7]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script/sysconfig'
+make[7]: Nothing to be done for `install-exec-am'.
+ /usr/bin/mkdir -p '/opt/etherlab/etc/sysconfig'
+ /usr/bin/install -c -m 644 ethercat '/opt/etherlab/etc/sysconfig'
+make[7]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script/sysconfig'
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script/sysconfig'
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script'
+make[7]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script'
+ /usr/bin/mkdir -p '/opt/etherlab/etc'
+ /usr/bin/install -c -m 644 ethercat.conf '/opt/etherlab/etc'
+ /usr/bin/mkdir -p '/opt/etherlab/sbin'
+ /usr/bin/install -c ethercatctl '/opt/etherlab/sbin'
+ /usr/bin/mkdir -p '/opt/etherlab/lib/systemd/system'
+ /usr/bin/install -c -m 644 ethercat.service '/opt/etherlab/lib/systemd/system'
+make[7]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script'
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script'
+make[5]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script'
+make[4]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/script'
+Making install in devices
+make[4]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices'
+make  install-recursive
+make[5]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices'
+Making install in ccat
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/ccat'
+make  install-am
+make[7]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/ccat'
+make[8]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/ccat'
+make[8]: Nothing to be done for `install-exec-am'.
+make[8]: Nothing to be done for `install-data-am'.
+make[8]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/ccat'
+make[7]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/ccat'
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/ccat'
+Making install in e1000
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/e1000'
+make  install-am
+make[7]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/e1000'
+make[8]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/e1000'
+make[8]: Nothing to be done for `install-exec-am'.
+make[8]: Nothing to be done for `install-data-am'.
+make[8]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/e1000'
+make[7]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/e1000'
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/e1000'
+Making install in e1000e
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/e1000e'
+make  install-am
+make[7]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/e1000e'
+make[8]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/e1000e'
+make[8]: Nothing to be done for `install-exec-am'.
+make[8]: Nothing to be done for `install-data-am'.
+make[8]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/e1000e'
+make[7]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/e1000e'
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/e1000e'
+Making install in igb
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/igb'
+make  install-am
+make[7]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/igb'
+make[8]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/igb'
+make[8]: Nothing to be done for `install-exec-am'.
+make[8]: Nothing to be done for `install-data-am'.
+make[8]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/igb'
+make[7]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/igb'
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices/igb'
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices'
+make[7]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices'
+make[7]: Nothing to be done for `install-exec-am'.
+make[7]: Nothing to be done for `install-data-am'.
+make[7]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices'
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices'
+make[5]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices'
+make[4]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/devices'
+Making install in master
+make[4]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/master'
+make  install-am
+make[5]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/master'
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/master'
+make[6]: Nothing to be done for `install-exec-am'.
+make[6]: Nothing to be done for `install-data-am'.
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/master'
+make[5]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/master'
+make[4]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/master'
+Making install in tool
+make[4]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/tool'
+make[5]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/tool'
+ /usr/bin/mkdir -p '/opt/etherlab/bin'
+  /bin/sh ../libtool   --mode=install /usr/bin/install -c ethercat '/opt/etherlab/bin'
+libtool: install: /usr/bin/install -c ethercat /opt/etherlab/bin/ethercat
+make[5]: Nothing to be done for `install-data-am'.
+make[5]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/tool'
+make[4]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/tool'
+Making install in lib
+make[4]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/lib'
+make[5]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/lib'
+ /usr/bin/mkdir -p '/opt/etherlab/lib'
+ /bin/sh ../libtool   --mode=install /usr/bin/install -c   libethercat.la '/opt/etherlab/lib'
+libtool: install: /usr/bin/install -c .libs/libethercat.so.1.1.0 /opt/etherlab/lib/libethercat.so.1.1.0
+libtool: install: (cd /opt/etherlab/lib && { ln -s -f libethercat.so.1.1.0 libethercat.so.1 || { rm -f libethercat.so.1 && ln -s libethercat.so.1.1.0 libethercat.so.1; }; })
+libtool: install: (cd /opt/etherlab/lib && { ln -s -f libethercat.so.1.1.0 libethercat.so || { rm -f libethercat.so && ln -s libethercat.so.1.1.0 libethercat.so; }; })
+libtool: install: /usr/bin/install -c .libs/libethercat.lai /opt/etherlab/lib/libethercat.la
+libtool: install: /usr/bin/install -c .libs/libethercat.a /opt/etherlab/lib/libethercat.a
+libtool: install: chmod 644 /opt/etherlab/lib/libethercat.a
+libtool: install: ranlib /opt/etherlab/lib/libethercat.a
+libtool: finish: PATH="/sbin:/bin:/usr/sbin:/usr/bin:/sbin" ldconfig -n /opt/etherlab/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /opt/etherlab/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the `-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the `LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the `LD_RUN_PATH' environment variable
+     during linking
+   - use the `-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to `/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+make[5]: Nothing to be done for `install-data-am'.
+make[5]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/lib'
+make[4]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/lib'
+Making install in examples
+make[4]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples'
+make  install-recursive
+make[5]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples'
+Making install in dc_user
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples/dc_user'
+make[7]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples/dc_user'
+make[7]: Nothing to be done for `install-exec-am'.
+make[7]: Nothing to be done for `install-data-am'.
+make[7]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples/dc_user'
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples/dc_user'
+Making install in user
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples/user'
+make[7]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples/user'
+make[7]: Nothing to be done for `install-exec-am'.
+make[7]: Nothing to be done for `install-data-am'.
+make[7]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples/user'
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples/user'
+make[6]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples'
+make[7]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples'
+make[7]: Nothing to be done for `install-exec-am'.
+make[7]: Nothing to be done for `install-data-am'.
+make[7]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples'
+make[6]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples'
+make[5]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples'
+make[4]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code/examples'
+make[4]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+make[5]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+make[5]: Nothing to be done for `install-exec-am'.
+make[5]: Nothing to be done for `install-data-am'.
+make[5]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+make[4]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+make[3]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+make[2]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+make[1]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+[anderssandstrom@mcag-ecmc-lenovo-std-01 etherlabmaster]$ make dkms_add
+make[1]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+/usr/sbin/dkms add -m etherlabmaster -v 1.5.2
+
+Creating symlink /var/lib/dkms/etherlabmaster/1.5.2/source ->
+                 /usr/src/etherlabmaster-1.5.2
+
+DKMS: add completed.
+make[1]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+[anderssandstrom@mcag-ecmc-lenovo-std-01 etherlabmaster]$ make dkms_build
+make[1]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+/usr/sbin/dkms build -m etherlabmaster -v 1.5.2
+
+Kernel preparation unnecessary for this kernel.  Skipping...
+
+Building module:
+cleaning build area...
+make -j3 KERNELRELEASE=3.10.0-1062.12.1.rt56.1042.el7.x86_64 -C /lib/modules/3.10.0-1062.12.1.rt56.1042.el7.x86_64/build M=/var/lib/dkms/etherlabmaster/1.5.2/build modules....
+cleaning build area...
+
+DKMS: build completed.
+make[1]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+[anderssandstrom@mcag-ecmc-lenovo-std-01 etherlabmaster]$ make dkms_install
+make[1]: Entering directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+/usr/sbin/dkms install -m etherlabmaster -v 1.5.2 --force
+
+ec_master.ko.xz:
+Running module version sanity check.
+ - Original module
+   - No original module exists within this kernel
+ - Installation
+   - Installing to /lib/modules/3.10.0-1062.12.1.rt56.1042.el7.x86_64/extra/
+
+ec_generic.ko.xz:
+Running module version sanity check.
+ - Original module
+   - No original module exists within this kernel
+ - Installation
+   - Installing to /lib/modules/3.10.0-1062.12.1.rt56.1042.el7.x86_64/extra/
+Adding any weak-modules
+
+depmod...
+
+Backing up initramfs-3.10.0-1062.12.1.rt56.1042.el7.x86_64.img to /boot/initramfs-3.10.0-1062.12.1.rt56.1042.el7.x86_64.img.old-dkms
+Making new initramfs-3.10.0-1062.12.1.rt56.1042.el7.x86_64.img
+(If next boot fails, revert to initramfs-3.10.0-1062.12.1.rt56.1042.el7.x86_64.img.old-dkms image)
+dracut........
+
+DKMS: install completed.
+depmod -a
+make[1]: Leaving directory `/home/anderssandstrom/sources/etherlabmaster/etherlabmaster-code'
+[anderssandstrom@mcag-ecmc-lenovo-std-01 etherlabmaster]$ make setup
+>>> We've found the local configuration file.
+    The original ETHERCAT_MASTER0 = enp0s25
+    will be overriden with ETHERCAT_MASTER0 = eno4
+
+>>> ---------------------------------------
+ECAT_SYSTEMD_PATH : /opt/etherlab/lib/systemd/system
+ECAT_CONF_PATH    : /opt/etherlab/etc
+ETHERCAT_CONFIG   : /opt/etherlab/etc/ethercat.conf
+>>> Setup the systemd dkms.service in /usr/lib/systemd/system
+
+>>> Set up EtherCAT Master ... 
+    eno4 : 7c:8a:e1:d2:18:29
+>>> Setup the systemd in /usr/lib/systemd/system
+install: ‘/opt/etherlab/lib/systemd/system/ethercat.service’ and ‘/usr/lib/systemd/system/ethercat.service’ are the same file
+Created symlink from /etc/systemd/system/multi-user.target.wants/ethercat.service to /usr/lib/systemd/system/ethercat.service.
+>>> One should run the following command later
+    systemctl start ethercat.service
+
+>>> Put the udev rule : KERNEL=="EtherCAT[0-9]*", SUBSYSTEM=="EtherCAT", MODE="0666" in /etc/udev/rules.d/99-ethercat.rules to be accessible via an user.
+    KERNEL=="EtherCAT[0-9]*", SUBSYSTEM=="EtherCAT", MODE="0666"
+
+>>> Check the /etc/udev/rules.d/99-ethercat.rules with cat
+    KERNEL=="EtherCAT[0-9]*", SUBSYSTEM=="EtherCAT", MODE="0666"
+
+>>> Reload udev rules, and trigger it
+ln: ‘/opt/etherlab/bin/ethercat’ and ‘/usr/bin/ethercat’ are the same file
+    /opt/etherlab/lib
+>>>
+It is mandatory to reboot your system once
+>>>
+[anderssandstrom@mcag-ecmc-lenovo-std-01 etherlabmaster]$ make showopts
+
+>>>>  Configuration Options Variables   <<<<
+
+E3_EHTERLAB_CONF_OPTIONS is defined as the follows:
+
+--enable-generic --disable-8139too --disable-e100 --disable-e1000 --disable-e1000e --disable-igb --disable-r8169 --disable-ccat --enable-static=yes --enable-shared=yes --enable-eoe=no --enable-cycles=yes --enable-hrtimer=no --enable-regalias=no --enable-tool=yes --enable-userlib=yes --enable-sii-assign=yes --enable-rt-syslog=yes
+
+WITH_PATCHSET = NO
+
+WITH_DEV_8139TOO = NO
+WITH_DEV_CCAT = NO
+WITH_DEV_E100 = NO
+WITH_DEV_E1000 = NO
+WITH_DEV_E1000E = NO
+WITH_DEV_GENERIC = YES
+WITH_DEV_IGB = NO
+WITH_DEV_R8169 = NO
+
+ENABLE_CYCLES = YES
+ENABLE_EOE = NO
+ENABLE_HRTIMER = NO
+ENABLE_REGALIAS = NO
+ENABLE_RT_SYSLOG = YES
+ENABLE_SII_ASSIGN = YES
+ENABLE_STATIC = YES
+ENABLE_TOOL = YES
+ENABLE_USERLIB = YES
+
