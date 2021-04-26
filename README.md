@@ -14,7 +14,8 @@ Note: Do not have usb mouse connected in text mode since it generates latencits 
 Install new kernel:
 
 1. remove kernel filter in /etc/yum.conf (kernel updates blocked by infra)
-2. add cern rt repo
+2. add cern rt repo (https://blog.roeften.com/2016/12/centos-7-install-realtime-kernel-using.html)
+3. 
 
 Centos 7 Install Realtime kernel using yum
 Wanted to try out an rt kernel for my asterisk box. One option is to build a patched kernel.. The other option I am trying out now is to install using the Cern repo. I am using a plain Centos 7 installation and not the Cern version. At the time of writing this I had to install an older version of tuned in order to successfully finish the process: 
