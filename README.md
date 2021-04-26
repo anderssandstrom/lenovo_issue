@@ -33,7 +33,8 @@ Finally yum groupinstall RT should install the rt kernel. Reboot to use. I am cu
 
 4. sudo yum search kernel-rt
 5. sudo yum install kernel-rt...
-6.  
+6. sudo yum install kernel-rt-devel. (headers)
+7.  
 
 
 
