@@ -39,3 +39,5 @@ Finally yum groupinstall RT should install the rt kernel. Reboot to use. I am cu
 
 
 
+btw /opt/etherlab is linked to /usr in csentry instll.. "unlink /opt/etherlab" to release
+
