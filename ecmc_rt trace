@@ -1,0 +1,150 @@
+# tracer: wakeup_rt
+#
+# wakeup_rt latency trace v1.1.5 on 3.10.0-1062.12.1.rt56.1042.el7.x86_64
+# --------------------------------------------------------------------
+# latency: 788 us, #130/130, CPU#2 | (M:preempt VP:0, KP:0, SP:0 HP:0 #P:4)
+#    -----------------
+#    | task: ecmc_rt-2617 (uid:0 nice:0 policy:1 rt_prio:71)
+#    -----------------
+#
+#                  _--------=> CPU#              
+#                 / _-------=> irqs-off          
+#                | / _------=> need-resched      
+#                || / _-----=> need-resched_lazy 
+#                ||| / _----=> hardirq/softirq   
+#                |||| / _---=> preempt-depth     
+#                ||||| / _--=> preempt-lazy-depth
+#                |||||| / _-=> migrate-disable   
+#                ||||||| /     delay             
+# cmd     pid    |||||||| time   |  caller       
+#     \   /      ||||||||   \    |  /            
+  <idle>-0       2dN.h4..    4us+:      0:120:R   + [002]  2617: 28:R ecmc_rt
+  <idle>-0       2dN.h4..    7us : ttwu_do_activate <-try_to_wake_up
+  <idle>-0       2dN.h3..    8us : task_woken_rt <-ttwu_do_wakeup
+  <idle>-0       2dN.h2..    8us+: _raw_spin_unlock_irqrestore <-try_to_wake_up
+  <idle>-0       2dN.h1..   18us : _raw_spin_lock <-__hrtimer_run_queues
+  <idle>-0       2dN.h2..   18us+: __hrtimer_get_next_event <-hrtimer_interrupt
+  <idle>-0       2dN.h1..   32us : tick_program_event <-hrtimer_interrupt
+  <idle>-0       2dN.h1..   32us+: clockevents_program_event <-tick_program_event
+  <idle>-0       2dN.h1..   45us : ktime_get <-clockevents_program_event
+  <idle>-0       2dN.h1..   46us : lapic_next_deadline <-clockevents_program_event
+  <idle>-0       2dN.h1..   46us+: irq_exit <-smp_apic_timer_interrupt
+  <idle>-0       2dN..1..   58us : idle_cpu <-irq_exit
+  <idle>-0       2dN..1..   58us : rcu_irq_exit <-irq_exit
+  <idle>-0       2dN..1..   59us : rcu_eqs_enter_common.isra.28 <-rcu_irq_exit
+  <idle>-0       2dN..1..   59us+: __smp_mb__before_atomic <-rcu_eqs_enter_common.isra.28
+  <idle>-0       2dN..1..   68us+: __smp_mb__after_atomic <-rcu_eqs_enter_common.isra.28
+  <idle>-0       2dN..1..   80us : smp_apic_timer_interrupt <-apic_timer_interrupt
+  <idle>-0       2dN..1..   80us : irq_enter <-smp_apic_timer_interrupt
+  <idle>-0       2dN..1..   80us : rcu_irq_enter <-irq_enter
+  <idle>-0       2dN..1..   80us+: rcu_eqs_exit_common.isra.29 <-rcu_irq_enter
+  <idle>-0       2dN..1..   95us : __smp_mb__before_atomic <-rcu_eqs_exit_common.isra.29
+  <idle>-0       2dN..1..   95us : __smp_mb__after_atomic <-rcu_eqs_exit_common.isra.29
+  <idle>-0       2dN..1..   95us : tick_check_idle <-irq_enter
+  <idle>-0       2dN..1..   95us+: tick_check_oneshot_broadcast_this_cpu <-tick_check_idle
+  <idle>-0       2dN.h1..  109us : exit_idle <-smp_apic_timer_interrupt
+  <idle>-0       2dN.h1..  110us : local_apic_timer_interrupt <-smp_apic_timer_interrupt
+  <idle>-0       2dN.h1..  110us+: hrtimer_interrupt <-local_apic_timer_interrupt
+  <idle>-0       2dN.h1..  128us : _raw_spin_lock <-hrtimer_interrupt
+  <idle>-0       2dN.h2..  128us : ktime_get_update_offsets_now <-hrtimer_interrupt
+  <idle>-0       2dN.h2..  128us : __hrtimer_run_queues <-hrtimer_interrupt
+  <idle>-0       2dN.h2..  128us+: __remove_hrtimer <-__hrtimer_run_queues
+  <idle>-0       2dN.h1..  141us : tick_sched_timer <-__hrtimer_run_queues
+  <idle>-0       2dN.h1..  141us+: ktime_get <-tick_sched_timer
+  <idle>-0       2dN.h1..  150us+: tick_sched_do_timer <-tick_sched_timer
+  <idle>-0       2dN.h1..  161us : tick_sched_handle <-tick_sched_timer
+  <idle>-0       2dN.h1..  161us : update_process_times <-tick_sched_handle
+  <idle>-0       2dN.h1..  161us+: account_process_tick <-update_process_times
+  <idle>-0       2dN.h1..  239us+: scheduler_tick <-update_process_times
+  <idle>-0       2dN.h1..  241us+: _raw_spin_lock <-scheduler_tick
+  <idle>-0       2dN.h2..  270us : __update_cpu_load <-scheduler_tick
+  <idle>-0       2dN.h2..  271us+: task_tick_idle <-scheduler_tick
+  <idle>-0       2dN.h1..  289us+: trigger_load_balance <-scheduler_tick
+  <idle>-0       2dN.h1..  303us : raise_softirq <-trigger_load_balance
+  <idle>-0       2dN.h1..  303us+: raise_softirq_irqoff <-raise_softirq
+  <idle>-0       2dN.h1..  318us+: do_raise_softirq_irqoff <-raise_softirq_irqoff
+  <idle>-0       2dN.h1..  324us+: idle_cpu <-trigger_load_balance
+  <idle>-0       2dN.h1..  330us : __rcu_read_lock <-trigger_load_balance
+  <idle>-0       2dN.h1..  330us+: __rcu_read_unlock <-trigger_load_balance
+  <idle>-0       2dN.h1..  346us : run_local_timers <-update_process_times
+  <idle>-0       2dN.h1..  346us+: hrtimer_run_queues <-run_local_timers
+  <idle>-0       2dN.h1..  358us+: raise_softirq <-run_local_timers
+  <idle>-0       2dN.h1..  362us : raise_softirq_irqoff <-raise_softirq
+  <idle>-0       2dN.h1..  362us+: do_raise_softirq_irqoff <-raise_softirq_irqoff
+  <idle>-0       2dN.h1..  374us : rcu_check_callbacks <-update_process_times
+  <idle>-0       2dN.h1..  374us+: rcu_bh_qs <-rcu_check_callbacks
+  <idle>-0       2dN.h1..  384us : cpu_needs_another_gp <-rcu_check_callbacks
+  <idle>-0       2dN.h1..  384us+: cpu_needs_another_gp <-rcu_check_callbacks
+  <idle>-0       2dN.h1..  396us+: cpu_needs_another_gp <-rcu_check_callbacks
+  <idle>-0       2dN.h1..  401us : run_posix_cpu_timers <-update_process_times
+  <idle>-0       2dN.h1..  401us+: profile_tick <-tick_sched_handle
+  <idle>-0       2dN.h1..  407us : hrtimer_forward <-tick_sched_timer
+  <idle>-0       2dN.h1..  407us+: _raw_spin_lock <-__hrtimer_run_queues
+  <idle>-0       2dN.h2..  411us : enqueue_hrtimer <-__hrtimer_run_queues
+  <idle>-0       2dN.h2..  411us : __hrtimer_get_next_event <-hrtimer_interrupt
+  <idle>-0       2dN.h1..  411us : tick_program_event <-hrtimer_interrupt
+  <idle>-0       2dN.h1..  411us+: clockevents_program_event <-tick_program_event
+  <idle>-0       2dN.h1..  422us : ktime_get <-clockevents_program_event
+  <idle>-0       2dN.h1..  422us : lapic_next_deadline <-clockevents_program_event
+  <idle>-0       2dN.h1..  422us+: irq_exit <-smp_apic_timer_interrupt
+  <idle>-0       2dN..1..  428us+: wakeup_softirqd <-irq_exit
+  <idle>-0       2dN..1..  431us : wake_up_process <-wakeup_softirqd
+  <idle>-0       2dN..1..  431us : try_to_wake_up <-wake_up_process
+  <idle>-0       2dN..1..  431us+: _raw_spin_lock_irqsave <-try_to_wake_up
+  <idle>-0       2dN..2..  449us+: _raw_spin_lock <-try_to_wake_up
+  <idle>-0       2dN..3..  462us : ttwu_do_activate <-try_to_wake_up
+  <idle>-0       2dN..3..  462us+: activate_task <-ttwu_do_activate
+  <idle>-0       2dN..3..  476us+: enqueue_task_fair <-activate_task
+  <idle>-0       2dN..3..  482us+: enqueue_entity <-enqueue_task_fair
+  <idle>-0       2dN..3..  487us+: update_curr <-enqueue_entity
+  <idle>-0       2dN..3..  493us : update_cfs_rq_blocked_load <-enqueue_entity
+  <idle>-0       2dN..3..  494us+: account_entity_enqueue <-enqueue_entity
+  <idle>-0       2dN..3..  497us+: update_cfs_shares <-enqueue_entity
+  <idle>-0       2dN..3..  504us : place_entity <-enqueue_entity
+  <idle>-0       2dN..3..  504us+: __enqueue_entity <-enqueue_entity
+  <idle>-0       2dN..3..  510us : hrtick_update <-enqueue_task_fair
+  <idle>-0       2dN..3..  510us : ttwu_do_wakeup <-ttwu_do_activate
+  <idle>-0       2dN..3..  510us+: check_preempt_curr <-ttwu_do_wakeup
+  <idle>-0       2dN..3..  523us+: resched_curr <-check_preempt_curr
+  <idle>-0       2dN..2..  527us+: _raw_spin_unlock_irqrestore <-try_to_wake_up
+  <idle>-0       2dN..1..  540us+: wakeup_timer_softirqd <-irq_exit
+  <idle>-0       2dN..1..  551us : wake_up_process <-wakeup_timer_softirqd
+  <idle>-0       2dN..1..  551us+: try_to_wake_up <-wake_up_process
+  <idle>-0       2dN..1..  565us : _raw_spin_lock_irqsave <-try_to_wake_up
+  <idle>-0       2dN..2..  566us+: _raw_spin_lock <-try_to_wake_up
+  <idle>-0       2dN..3..  578us : ttwu_do_activate <-try_to_wake_up
+  <idle>-0       2dN..3..  578us+: activate_task <-ttwu_do_activate
+  <idle>-0       2dN..3..  586us : enqueue_task_rt <-activate_task
+  <idle>-0       2dN..3..  586us+: dequeue_rt_stack <-enqueue_task_rt
+  <idle>-0       2dN..3..  605us : update_rt_migration <-enqueue_task_rt
+  <idle>-0       2dN..3..  605us : hrtimer_active <-enqueue_task_rt
+  <idle>-0       2dN..3..  605us+: ttwu_do_wakeup <-ttwu_do_activate
+  <idle>-0       2dN..3..  617us : check_preempt_curr <-ttwu_do_wakeup
+  <idle>-0       2dN..3..  617us+: resched_curr <-check_preempt_curr
+  <idle>-0       2dN..3..  628us : task_woken_rt <-ttwu_do_wakeup
+  <idle>-0       2dN..2..  628us+: _raw_spin_unlock_irqrestore <-try_to_wake_up
+  <idle>-0       2dN..1..  641us+: idle_cpu <-irq_exit
+  <idle>-0       2dN..1..  651us : rcu_irq_exit <-irq_exit
+  <idle>-0       2dN..1..  651us+: rcu_eqs_enter_common.isra.28 <-rcu_irq_exit
+  <idle>-0       2dN..1..  662us : __smp_mb__before_atomic <-rcu_eqs_enter_common.isra.28
+  <idle>-0       2dN..1..  662us+: __smp_mb__after_atomic <-rcu_eqs_enter_common.isra.28
+  <idle>-0       2.N..1..  675us : rcu_idle_exit <-cpu_idle_poll
+  <idle>-0       2dN..1..  675us : rcu_eqs_exit <-rcu_idle_exit
+  <idle>-0       2dN..1..  676us : rcu_eqs_exit_common.isra.29 <-rcu_eqs_exit
+  <idle>-0       2dN..1..  676us+: __smp_mb__before_atomic <-rcu_eqs_exit_common.isra.29
+  <idle>-0       2dN..1..  690us : __smp_mb__after_atomic <-rcu_eqs_exit_common.isra.29
+  <idle>-0       2.N..1..  690us : arch_cpu_idle_exit <-cpu_startup_entry
+  <idle>-0       2.N..1..  691us+: tick_nohz_idle_exit <-cpu_startup_entry
+  <idle>-0       2.N..1..  705us : sched_ttwu_pending <-cpu_startup_entry
+  <idle>-0       2.N..1..  705us+: schedule_preempt_disabled <-cpu_startup_entry
+  <idle>-0       2.N.....  725us : schedule <-schedule_preempt_disabled
+  <idle>-0       2.N.....  725us+: __schedule <-preempt_schedule.part.82
+  <idle>-0       2.N..1..  737us+: rcu_note_context_switch <-__schedule
+  <idle>-0       2.N..1..  749us : _raw_spin_lock_irq <-__schedule
+  <idle>-0       2dN..2..  749us : pick_next_task_stop <-__schedule
+  <idle>-0       2dN..2..  749us : pick_next_task_dl <-__schedule
+  <idle>-0       2dN..2..  749us+: pick_next_task_rt <-__schedule
+  <idle>-0       2dN..2..  760us : put_prev_task_idle <-pick_next_task_rt
+  <idle>-0       2dN..2..  760us+: idle_exit_fair <-put_prev_task_idle
+  <idle>-0       2d...3..  777us : __schedule <-preempt_schedule.part.82
+  <idle>-0       2d...3..  778us :      0:120:R ==> [002]  2617: 28:R ecmc_rt
